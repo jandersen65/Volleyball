@@ -1,0 +1,60 @@
+<!DOCTYPE project>
+
+<project name="Galerien" default="install" basedir=".">
+
+	<property name="dist" location="C:/xampp/htdocs/khr" />
+
+	<target name="install" 
+		    description="generate the distribution" 
+		    depends="init, index, lib, css, javascript, galerien, php, test">
+	</target>
+
+	<target name="init">
+		<mkdir dir="${dist}" />
+	</target>
+
+  
+  <target name="lib">
+    <copy todir="${dist}/lib">
+      <fileset dir="lib" />
+    </copy>
+  </target>
+  
+	<target name="css">
+		<copy todir="${dist}/css">
+			<fileset dir="css" />
+		</copy>
+	</target>
+		
+	<target name="javascript">
+		<copy todir="${dist}/javascript">
+			<fileset dir="javascript" />
+		</copy>
+	</target>
+  
+  <target name="galerien">
+    <copy todir="${dist}/galerien">
+      <fileset dir="galerien" />
+    </copy>
+  </target>
+	
+	<target name="php">
+		<copy todir="${dist}/php">
+			<fileset dir="php" />
+		</copy>
+	</target>
+	
+	<target name="index">
+		<copy todir="${dist}">
+			<fileset dir="." includes="resultat.php, galerie.php, uk-toggle.php, uk.php, divphp.php, browser.php, setup.html"/>
+		</copy>
+	</target>
+  
+  <target name="test">
+    <copy todir="${dist}">
+      <fileset dir="." includes="volleybaselws.php, swissvolleyws.php" />
+      <fileset dir="test" includes="*.php" />
+    </copy>
+  </target>
+
+</project>

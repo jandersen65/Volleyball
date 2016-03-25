@@ -1,0 +1,64 @@
+<!DOCTYPE project>
+
+<project name="Resultatvermittlung" default="install" basedir=".">
+
+	<property name="dist" location="C:/xampp/htdocs/khr" /> <!-- /KTV-Homepage-Resultatvermittlung -->
+
+	<target name="install" 
+		    description="generate the distribution" 
+		    depends="index, init, bilder, galerien, lib, css, javascript, php, html">
+	</target>
+
+	<target name="init">
+		<mkdir dir="${dist}" />
+	</target>
+	
+	<target name="bilder">
+		<copy todir="${dist}/bilder">
+			<fileset dir="bilder" />
+		</copy>
+	</target>
+
+  <target name="galerien">
+    <copy todir="${dist}/galerien">
+      <fileset dir="galerien" />
+    </copy>
+  </target>
+  
+  <target name="lib">
+    <copy todir="${dist}/lib">
+      <fileset dir="lib" />
+    </copy>
+  </target>
+  
+	<target name="css">
+		<copy todir="${dist}/css">
+			<fileset dir="css" />
+		</copy>
+	</target>
+		
+	<target name="javascript">
+		<copy todir="${dist}/javascript">
+			<fileset dir="javascript" />
+		</copy>
+	</target>
+	
+	<target name="php">
+		<copy todir="${dist}/php">
+			<fileset dir="php" />
+		</copy>
+	</target>
+
+	<target name="html">
+		<copy todir="${dist}/html">
+			<fileset dir="html" />
+		</copy>
+	</target>
+	
+	<target name="index">
+		<copy todir="${dist}">
+			<fileset file="index.php"/>
+		</copy>
+	</target>
+
+</project>

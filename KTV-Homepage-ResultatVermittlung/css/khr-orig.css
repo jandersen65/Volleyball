@@ -1,0 +1,98 @@
+@CHARSET "ISO-8859-1";
+
+body {
+  font: 10px verdana;
+  vertical-align: top;
+}
+
+.c_khr_einhalt {
+}
+
+.c_khr_teampage {
+}
+
+.c_khr_teampage_menu {
+	margin-bottom: 5px;
+}
+
+
+.c_khr_teampage_menu input {
+  display:none;
+}
+
+.c_khr_teampage_menu input:checked + label {
+  font-weight: bold;
+}
+
+.c_khr_teampage_menu label {
+  cursor:pointer;
+  padding-right: 10px;
+}
+
+.c_khr_teampage_menu label:last-child {
+  margin-right:0;
+}
+
+.c_khr_teampage_menu label:hover {
+  font-weight: bold;
+}
+
+
+
+.c_khr_teampage_data {
+}
+
+.c_tabelle {
+  vertical-align: top;
+}
+
+.c_spiele {
+  vertical-align: top;
+  border-spacing: 0px;
+}
+
+.c_spiele th {
+  font-weight: bold;
+  background-color: white;
+}
+
+.c_spiele tr:nth-child(odd) {
+	background-color: #F2F2F2;
+}
+
+.c_spiele tr:nth-child(even) {
+  background-color: #58FAF4;
+}
+
+
+.c_rangliste {
+  vertical-align: top;
+  border-spacing: 0px;
+}
+
+.c_rangliste tr:nth-child(odd) {
+  background-color: #F2F2F2;
+}
+
+.c_rangliste tr:nth-child(even) {
+  background-color: #58FAF4;
+}
+
+.c_khr_main_switcher {
+	
+}
+
+.c_khr_main_switcher a {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px #20538D;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: #4479BA;
+    color: #FFF;
+    padding: 8px 12px;
+    text-decoration: none;
+}
