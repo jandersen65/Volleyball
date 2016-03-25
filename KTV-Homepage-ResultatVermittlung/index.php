@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="lib/uikit-2.23.0/css/components/sticky.min.css" />    
     <link rel="stylesheet" href="lib/uikit-2.23.0/css/components/accordion.min.css" />
     
-    <script type="text/javascript" src="javascript/ktv.js">                                     </script>
-    <script type="text/javascript" src="javascript/resultat.js">                                </script>
+    <script type="text/javascript" src="javascript/ktv_init.js">                                </script>
+    //<script type="text/javascript" src="javascript/ktv.js">                                     </script>
+    //<script type="text/javascript" src="javascript/resultat.js">                                </script>
     
     <script type="text/javascript" src="lib/jquery-1.11.1.min.js" >                             </script>
     
@@ -37,70 +38,12 @@
   
   <body>
   
-		  <script type="text/javascript">		
-		    function debug(txt) {  
-			    d = new Date();
-		    	document.getElementById("id_debug").innerHTML = "debug " + d.toLocaleTimeString() + " " + txt;
-		    }
-
-
-		    $(document).ready(function() { 
-			      $.ajax({url: "php/khr_dispatch.php?action=2000", 
-		                success: function(result) {
-		                            $('#id_khr_einhalt').html(result);
-		                         }
-	    	    });
-		    });
-		  	
-		    $(document).ready(function() {
-		    		$('#IdJbaResultate').off();
-		    		$('#IdJbaResultate').on('click',
-                         '.jba_link', 
-                         function(event) {
-												   event.preventDefault(); 
-												   //id   = $(this).data('id');		
-												   data = $(this).data();											    		  
-												   first = true;
-												   qstring ='';
-												   for (var key in data) {
-													   if (key == "id") {
-														   id = data[key];
-														   continue;
-													   }
-												     if (first) {
-													     qstring += '?';
-													     first = false;
-												     }
-												     else {
-													     qstring += '&';
-												     }
-												     qstring += key + '=' + data[key];
-												   }
-												   url='php/khr_dispatch.php' + qstring;
-												   //debug(id + "  " + url);
-												   //return
-												   $.ajax({url: url, 
-												           success: function(result) {
-														                  $('#' + id).html(result);
-														               }
-													    	 });  // .ajax
-		    		}) // on
-       }); // ready
-		    
-		    $(document).ready(function()  {
-											      $('#idMenu').on('show.uk.switcher',
-													                  function(event, area) {
-												                       document.getElementById("id_khr_einhalt").innerHTML="";
-											                      });
-		                      });
-      </script>
-      
       
 		      <div id="id_debug" >
 		      </div>
 		      
 		      
-  <div id="IdJbaResultate" class="uk-container">
+  <div id="idMainResultate" class="uk-container">
       
     <table>
       <tr>
