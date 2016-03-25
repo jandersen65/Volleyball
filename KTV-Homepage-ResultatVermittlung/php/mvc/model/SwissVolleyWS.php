@@ -27,7 +27,7 @@ class SwissVolleyWS {
 			}
 		}
 		catch (Exception $e) {
-			throw new Exception();
+  			echo "Tut uns Leid, aber ein Technisches Problem ist aufgetreten, die Daten konnten nicht bei VolleyBasel abgeholt werden.";
 		}
 	} // connect
 		
