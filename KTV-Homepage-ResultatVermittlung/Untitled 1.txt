@@ -1,0 +1,21 @@
+
+         
+        <!-- >div class="uk-container">
+           <ul  class="uk-tab" data-uk-tab="">
+              <li class="jba-tab1 uk-active" data-uk-tab=""><a href="#" data-param1="p1.1" data-param2="p1.2">Tab 1</a></li>
+              <li class="jba-tab1" data-uk-tab="">          <a href="#" data-param1="p2.1" data-param2="p2.2">Tab 2</a></li>
+              <li class="jba-tab1" data-uk-tab="">          <a href="#" data-param1="p3.1" data-param2="p3.2">Tab 3</a></li>
+              <li class="jba-tab1" data-uk-tab="">          <a href="#" data-param1="p4.1" data-param2="p4.2">Tab 4</a></li>
+              <li data-uk-dropdown="{mode:'click'}">
+                <a href="#">Tab dropdown&nbsp;<i class="uk-icon-caret-down"></i></a>
+                <div class="uk-dropdown uk-dropdown-small">
+                   <ul class="uk-nav uk-nav-dropdown">
+                     <li><a href="#" data-param1="p5.1.1" data-param2="p5.1.2">Tab 5.1</a></li>
+                     <li><a href="#" data-param1="p5.2.1" data-param2="p5.2.2">Tab 5.2</a></li>
+                     <li><a href="#" data-param1="p5.3.1" data-param2="p5.3.2">Tab 5.3</a></li>
+                   </ul>
+                </div>
+              </li>
+           </ul>
+         </div -->
+           

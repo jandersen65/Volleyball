@@ -52,7 +52,7 @@
   
   <target name="test">
     <copy todir="${dist}">
-      <fileset dir="." includes="volleybaselws.php, swissvolleyws.php" />
+      <fileset dir="." includes="volleybaselws.php, swissvolleyws.php, accordion.php" />
       <fileset dir="test" includes="*.php" />
     </copy>
   </target>

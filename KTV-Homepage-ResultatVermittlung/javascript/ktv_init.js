@@ -4,7 +4,7 @@
       document.getElementById("id_debug").innerHTML = "debug " + d.toLocaleTimeString() + " " + txt;
     }
 
-    $(document).ready(function() { 
+    $(document).ready1(function() { 
 	      $.ajax({url: "php/khr_dispatch.php?action=2000", 
                 success: function(result) {
                             $('#id_khr_einhalt').html(result);

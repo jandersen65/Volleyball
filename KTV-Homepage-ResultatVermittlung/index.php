@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="lib/uikit-2.23.0/css/components/accordion.min.css" />
     
     <script type="text/javascript" src="javascript/ktv_init.js">                                </script>
-    //<script type="text/javascript" src="javascript/ktv.js">                                     </script>
-    //<script type="text/javascript" src="javascript/resultat.js">                                </script>
+    <!--  script type="text/javascript" src="javascript/ktv.js">                                     </script -->
+    <!--  script type="text/javascript" src="javascript/resultat.js">                                </script -->
     
     <script type="text/javascript" src="lib/jquery-1.11.1.min.js" >                             </script>
     
