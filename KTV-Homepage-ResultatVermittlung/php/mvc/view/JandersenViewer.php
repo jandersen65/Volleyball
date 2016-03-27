@@ -23,9 +23,34 @@ class JandersenViewer  {
 					      . " data-regionalVereinNo=" . (is_null($verein->getRegionalVereinNo()) ? -1 : $verein->getRegionalVereinNo())
 	              . " data-nationalVereinNo=" . (is_null($verein->getNationalVereinNo()) ? -1 : $verein->getNationalVereinNo());
 			$vereinName = utf8_encode($verein->getVereinName());
-			$html .= "<a class='jba_link' href='#'" .  $params . ">" . $vereinName . "</a></br>";
+			$html .= "<a class='jba-link' href='#'" .  $params . ">" . $vereinName . "</a></br>";
 		}
 		$html .= "</div>";
+		return $html;
+	}
+	
+	public function printTeamsInMenu($nationaleTeams, $regionaleTeams) {
+		
+		$teamListe = new TeamListe();
+		foreach ($nationaleTeams->getTeams() as $team) {
+			$teamListe->addTeam($team);
+		}
+		foreach ($regionaleTeams->getTeams() as $team) {
+			$teamListe->addTeam($team);
+		}
+		$teamListe->sortByName();
+
+		$html = ""; //'<li class="uk-nav-header">Mannschaften</li>';
+		foreach ($teamListe->getTeams() as $team) {
+			$params = ' data-id=id_khr_einhalt'
+					    . ' data-action=7020'
+							. ' data-verband=' . $team->getVerband()
+							. ' data-teamno='  . $team->getTeamNo();
+			$teamName = utf8_encode($team->getTeamNameKurz());">$teamName" . "</a></br>";
+		
+			$html .= "<li><a class='jba-link uk-dropdown-close' href='#'" .  $params . ">" . $teamName . "</a></li>";
+		}
+		
 		return $html;
 	}
 	
@@ -54,7 +79,7 @@ class JandersenViewer  {
 		//		        . " data-action=2001"
 		//		        . " data-regionalVereinNo=" . (is_null($team->getRegionalVereinNo()) ? -1 : $team->getRegionalVereinNo())
 		//		        . " data-nationalVereinNo=" . (is_null($team->getNationalVereinNo()) ? -1 : $team->getNationalVereinNo());
-		//    $html .= "<a class='jba_link uk-button' href='#'" .  $params . ">Aktuelle Spiele</a></br>";
+		//    $html .= "<a class='jba-link uk-button' href='#'" .  $params . ">Aktuelle Spiele</a></br>";
 		//	}
 			
 			$params = ' data-id=id_gen_team'
@@ -63,7 +88,7 @@ class JandersenViewer  {
 				      . ' data-teamno='  . $team->getTeamNo();
 			$teamName = utf8_encode($team->getTeamNameKurz());">$teamName" . "</a></br>";
 
-			$html .= "<a class='jba_link uk-button' href='#'" .  $params . ">" . $teamName . "</a></br>";
+			$html .= "<a class='jba-link uk-button' href='#'" .  $params . ">" . $teamName . "</a></br>";
 		}
 		$html .= "</div>";
 		$html .= "<div id='id_gen_team'></div>";
@@ -117,7 +142,7 @@ class JandersenViewer  {
 
 		$html .= "<ul class='uk-tab'>";
 
-		$html .= "<li>" . "<a class='jba_link' href='#' $params>Alle Spiele" . "</a></li>";
+		$html .= "<li>" . "<a class='jba-link' href='#' $params>Alle Spiele" . "</a></li>";
 
 		
 		foreach($gruppen as $grp) {
@@ -130,7 +155,7 @@ class JandersenViewer  {
 					    . ' data-team=' . $team
 					    . ' data-gruppeno=' . $grpNo;
 			
-			$html   .= "<li>" . "<a class='jba_link' href='#' $params>$grpName" . "</a></li>";
+			$html   .= "<li>" . "<a class='jba-link' href='#' $params>$grpName" . "</a></li>";
 		}
 
 		$html .= "</ul>";
@@ -148,17 +173,17 @@ class JandersenViewer  {
 			$naechsterTag = utf8_encode(strftime ("am %A, dem %d. %B", time() + (($offset + 1)*24*60*60)));
 			if ($regio) {
 				$params = ' data-id=id_khr_einhalt' . ' data-action=6000' . ' data-offset=' . ($offset + 1);
-				$html .= "<a class='jba_link' href='#'" . $params . ">Regionale Spiele $naechsterTag</a>";
+				$html .= "<a class='jba-link' href='#'" . $params . ">Regionale Spiele $naechsterTag</a>";
 			  $html .= "<br/>";
 				$params = ' data-id=id_khr_einhalt' . ' data-action=6000' . ' data-offset=' . ($offset - 1);
-				$html .= "<a class='jba_link' href='#'" . $params . ">Regionale Spiele $vorTag</a>";
+				$html .= "<a class='jba-link' href='#'" . $params . ">Regionale Spiele $vorTag</a>";
 			}
 			else {
 				$params = ' data-id=id_khr_einhalt' . ' data-action=6010' . ' data-offset=' . ($offset + 1);
-				$html .= "<a class='jba_link' href='#'" . $params . ">Nationale Spiele $naechsterTag</a>";
+				$html .= "<a class='jba-link' href='#'" . $params . ">Nationale Spiele $naechsterTag</a>";
 			  $html .= "<br/>";
 				$params = ' data-id=id_khr_einhalt' . ' data-action=6010' . ' data-offset=' . ($offset - 1);
-				$html .= "<a class='jba_link' href='#'" . $params . ">Nationale Spiele $vorTag</a>";
+				$html .= "<a class='jba-link' href='#'" . $params . ">Nationale Spiele $vorTag</a>";
 			}
 		}
 		
@@ -183,7 +208,7 @@ class JandersenViewer  {
 
 
 			$gruppeLink = "<a "
-					        .   "class="         . "jba_link"             . " "
+					        .   "class="         . "jba-link"             . " "
 							    .   "href="          . "#"                    . " "
 									.   "data-id="       . "id_khr_einhalt"       . " "
 									.   "data-action="   . "5010"                 . " " // nächste gruppespiele
@@ -194,7 +219,7 @@ class JandersenViewer  {
 									. $spiel->getGruppenName();
 				
 			$heimTeamLink = "<a "
-					          .   "class="         . "jba_link"             . " "
+					          .   "class="         . "jba-link"             . " "
 							      .   "href="          . "#"                    . " "
 									  .   "data-id="       . "id_khr_einhalt"       . " "
 										.   "data-action="   . "7020"                 . " " // nächste gruppespiele
@@ -205,7 +230,7 @@ class JandersenViewer  {
 										.  $spiel->getHeimTeamName();
 				
 			$auswTeamLink = "<a "
-					          .   "class="         . "jba_link"             . " "
+					          .   "class="         . "jba-link"             . " "
 							      .   "href="          . "#"                    . " "
 									  .   "data-id="       . "id_khr_einhalt"       . " "
 										.   "data-action="   . "7020"                 . " " // nächste gruppespiele
@@ -266,7 +291,7 @@ class JandersenViewer  {
 		foreach ($spielListe->getSpiele() as $spiel) {
 			
 			$gruppeLink = "<a "
-									.   "class="         . "jba_link"             . " "
+									.   "class="         . "jba-link"             . " "
 									.   "href="          . "#"                    . " "
 									.   "data-id="       . "id_khr_einhalt"       . " "
 									.   "data-action="   . "5010"                 . " " // nächste gruppespiele
@@ -277,7 +302,7 @@ class JandersenViewer  {
 									. $spiel->getGruppenName();
 			
 			$heimTeamLink = "<a "
-										.   "class="         . "jba_link"             . " "
+										.   "class="         . "jba-link"             . " "
 										.   "href="          . "#"                    . " "
 										.   "data-id="       . "id_khr_einhalt"       . " "
 										.   "data-action="   . "7020"                 . " " // nächste gruppespiele
@@ -288,7 +313,7 @@ class JandersenViewer  {
 										.  $spiel->getHeimTeamName();
 			
 			$auswTeamLink = "<a "
-				           	.   "class="         . "jba_link"             . " "
+				           	.   "class="         . "jba-link"             . " "
 							      .   "href="          . "#"                    . " "
 									  .   "data-id="       . "id_khr_einhalt"       . " "
 										.   "data-action="   . "7020"                 . " " // nächste gruppespiele
@@ -349,7 +374,7 @@ class JandersenViewer  {
   	foreach ($rangListe->getRangListe() as $rang) {
   		
   		$lnk = "<a "
-  		     .   "class="        . "jba_link"         . " "
+  		     .   "class="        . "jba-link"         . " "
   		     .   "href="         . "#"                . " "
   		     .   "data-id="      . "id_khr_einhalt"   . " "
   				 .   "data-action="  . "7020"             . " "

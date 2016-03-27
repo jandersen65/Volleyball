@@ -273,6 +273,20 @@ class ResultatController {
 		$this->getTeamVerein(KTVRIEHEN_CLUB_NO_BS, KTVRIEHEN_CLUB_NO_SW);
 	}
 	
+	public function setupVereinMainMenu() {
+		
+		$dataService    = new NationalDataService();
+		$nationaleTeams = $dataService->getTeamsVerein(KTVRIEHEN_CLUB_NO_SW);
+		$dataService    = new RegionalDataService();
+		$regionaleTeams = $dataService->getTeamsVerein(KTVRIEHEN_CLUB_NO_BS);
+		
+		echo '<li><a class= "uk-dropdown-close jba-link" href="#"  data-id="id_khr_einhalt" data-action="2000">Aktuelle Spiele   </a></li>';
+		echo '<li class="uk-nav-divider"></li>';
+
+		echo $this->viewer->printTeamsInMenu($nationaleTeams, $regionaleTeams);
+		
+	}
+	
 } 
 
 ?>

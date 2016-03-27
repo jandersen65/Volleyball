@@ -19,3 +19,16 @@
            </ul>
          </div -->
            
+           
+           
+              <li data-uk-dropdown="{mode:'click, hover'}">
+                  <a class="jba-tab" href="#">Tab 2.2.3</a>
+                  <div class="uk-dropdown uk-dropdown-small">
+                    <ul class="uk-nav uk-nav-dropdown">
+                        <li><a class="jba-tab" href="#" data-param1="p2.2.3.1.1" data-param2="p1.2">Tab 2.2.3.2.1</a></li>
+                        <li><a class="jba-tab" href="#" data-param1="p2.2.3.1.2" data-param2="p2.2">Tab 2.2.3.2.2</a></li>
+                    </ul>
+                  </div>
+              </li>
+              
+              

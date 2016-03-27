@@ -39,6 +39,8 @@
 
   $request    = new KTVRequest();
   $action = $request->getAction();
+  //echo $action;
+  //return;
   switch ($action) {
     case "2000": // aktuelle Spiele, KTV
     	$controller->getAktuelleSpiele();
@@ -107,6 +109,9 @@
     	break;
     case "7032": // Regio Vereine
     	$controller->getNatVereine();
+    	break;
+    case "9001": // Verein Main Menu
+    	$controller->setupVereinMainMenu();
     	break;
     default; // TODO codebug
       break;

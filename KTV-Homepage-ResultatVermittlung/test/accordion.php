@@ -12,7 +12,7 @@
     <script type="text/javascript" src="lib/uikit-2.23.0/js/uikit.js" >                     </script>
     <script type="text/javascript" src="lib/uikit-2.23.0/js/components/accordion.js">       </script>
     
-    <title>Accordion</title>
+    <title>UIKit Accordion</title>
     
   </head>
   

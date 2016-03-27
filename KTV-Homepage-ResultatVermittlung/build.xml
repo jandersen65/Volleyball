@@ -46,7 +46,7 @@
 	
 	<target name="index">
 		<copy todir="${dist}">
-			<fileset dir="." includes="resultat.php, galerie.php, uk-toggle.php, uk.php, divphp.php, browser.php, setup.html"/>
+			<fileset dir="." includes="index.php, resultat.php, galerie.php, uk-toggle.php, uk.php, divphp.php, browser.php, setup.html"/>
 		</copy>
 	</target>
   
