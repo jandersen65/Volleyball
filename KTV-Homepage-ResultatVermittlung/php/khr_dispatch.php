@@ -92,7 +92,6 @@
       $nationalVereinNo = $request->getParameter("nationalVereinNo");
     	$controller->getTeamVerein($regionalVereinNo, $nationalVereinNo);
     	break;
-    	break;
     case "7010": // nationale mannschaften;
     	$controller->getNationaleMannschaften();
     	break;
@@ -110,8 +109,16 @@
     case "7032": // Regio Vereine
     	$controller->getNatVereine();
     	break;
-    case "9001": // Verein Main Menu
+    case "9000": // Verein Main Menu
     	$controller->setupVereinMainMenu();
+    	break;
+    case "9010": // Regional Main Menu
+    	$controller->setupRegionalMainMenu();
+    	break;
+    case "9020": // National Main Menu
+    	$controller->setupNationalMainMenu();
+    	//<li><a class= "jba-link" href="#"  data-id="id_khr_einhalt" data-action="6010" data-offset=0>Heute</a></li>
+			//<li><a class= "jba-link" href="#"  data-id="id_khr_einhalt" data-action="7032"    >Vereine</a></li>
     	break;
     default; // TODO codebug
       break;

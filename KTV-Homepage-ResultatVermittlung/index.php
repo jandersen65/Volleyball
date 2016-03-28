@@ -36,66 +36,37 @@
   
   
   <body>
-		      
+      
   <div id="idMainResultate">
       
         <div class="uk-container">
            <ul id="idMainMenu" class="uk-tab" data-uk-tab="">
-           
               <li data-uk-dropdown="{mode:'click'}">
-                <a class="jba-link" href="#" data-id="id-tab-2"       data-action="9001">KTV Riehen      </a>
-                  <div id="id-tab-2" class="uk-dropdown uk-dropdown-small">
+                <a class="jba-link" href="#" data-id="id-khr-ktv-menu" data-action="9000">KTV Riehen      </a>
+                  <div id="id-khr-ktv-menu" class="uk-dropdown uk-dropdown-small">
                     <ul class="uk-dropdown-close uk-nav uk-nav-dropdown">
                     </ul>  
                   </div>       
               </li>
-              
-              <li><a class="jba-link" href="#" data-id="id_khr_einhalt" data-action="6000">Regio           </a></li>
-              <li><a class="jba-link" href="#" data-id="id_khr_einhalt" data-action="6010">National        </a></li>
+              <li data-uk-dropdown="{mode:'click'}">
+                <a class="jba-link" href="#" data-id="id-khr-regio-menu" data-action="9010">Regional      </a>
+                  <div id="id-khr-regio-menu" class="uk-dropdown uk-dropdown-scrollable">
+                    <ul class="uk-dropdown-close uk-nav uk-nav-dropdown">
+                    </ul>  
+                  </div>       
+              </li>
+              <li data-uk-dropdown="{mode:'click'}">
+                <a class="jba-link" href="#" data-id="id-khr-natio-menu" data-action="9020">National      </a>
+                  <div id="id-khr-natio-menu" class="uk-dropdown uk-dropdown-small">
+                    <ul class="uk-dropdown-close uk-nav uk-nav-dropdown">
+                    </ul>  
+                  </div>       
+              </li>
            </ul>
          </div>
-         
-         
-        
-        <div class="uk-container">
-			    <table>
-			      <tr>
-			        <td>
-								<ul id="idSubMenu" class="uk-switcher">
-								    <li>
-								      <div>
-								        <ul class="uk-subnav uk-subnav-pill uk-subnav-line">
-					                <li><a class= "jba-link" href="#"  data-id="id_khr_einhalt" data-action="2000">Aktuelle Spiele   </a></li>
-					                <li><a class= "jba-link" href="#"  data-id="id_khr_einhalt" data-action="7025">Mannschaften      </a></li>
-					                <li><a class= "jba-link" href="#"  data-id="id_khr_einhalt" data-action="2010">Alle KTV-Spiele   </a></li>
-								        </ul>
-								      </div>
-								    </li>
-								    <li>
-								      <div>
-								        <ul class="uk-subnav uk-subnav-pill uk-subnav-line">
-						              <li><a class= "jba-link" href="#"  data-id="id_khr_einhalt" data-action="6000" data-offset=0>Heute</a></li>
-					                <li><a class= "jba-link" href="#"  data-id="id_khr_einhalt" data-action="7030"    >Vereine</a></li>
-								        </ul>
-								      </div>
-								    </li>
-								    <li>
-								      <div>
-								        <ul class="uk-subnav uk-subnav-pill uk-subnav-line">
-						              <li><a class= "jba-link" href="#"  data-id="id_khr_einhalt" data-action="6010" data-offset=0>Heute</a></li>
-					                <li><a class= "jba-link" href="#"  data-id="id_khr_einhalt" data-action="7032"    >Vereine</a></li>
-								        </ul>
-								      </div>
-								    </li>
-								</ul>
-						  
-						  </td>
-						</tr>
-				  </table>
-				</div>
 			
-        <div class="uk-container">
-			    <table>
+         <div class="uk-container">
+			     <table>
             <tr>
               <td>
 			          <div id="id_khr_einhalt" ></div>
@@ -104,11 +75,7 @@
 	        </table>
 				</div>
 	
-  </div>
+  </div>	  
+  </body>
   
-		  
-</body>
-  
-  
-
 </html>

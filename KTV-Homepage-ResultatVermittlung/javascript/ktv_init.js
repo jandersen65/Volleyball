@@ -12,33 +12,34 @@
   	
     $(document).ready(function() {
     		$('#idMainResultate').off();
-    		$('#idMainResultate').on('click',
+    		$('#idMainResultate').on(
+    			 'click',
                  '.jba-link', 
                  function(event) {
-			   event.preventDefault(); 		
-			   data = $(this).data();											    		  
-			   first = true;
-			   qstring ='';
-			   for (var key in data) {
-				   if (key == "id") {
-					   id = data[key];
-					   continue;
+				   event.preventDefault(); 		
+				   data = $(this).data();											    		  
+				   first = true;
+				   qstring ='';
+				   for (var key in data) {
+					   if (key == "id") {
+						   id = data[key];
+						   continue;
+					   }
+				     if (first) {
+					     qstring += '?';
+					     first = false;
+				     }
+				     else {
+					     qstring += '&';
+				     }
+				     qstring += key + '=' + data[key];
 				   }
-			     if (first) {
-				     qstring += '?';
-				     first = false;
-			     }
-			     else {
-				     qstring += '&';
-			     }
-			     qstring += key + '=' + data[key];
-			   }
-			   url='php/khr_dispatch.php' + qstring;
-			   $.ajax({url: url, 
-			           success: function(result) {
-					                  $('#' + id).html(result);
-					               }
-				    	 });  // .ajax
+				   url='php/khr_dispatch.php' + qstring;
+				   $.ajax({url: url, 
+				           success: function(result) {
+						                  $('#' + id).html(result);
+						               }
+					    	 });  // .ajax
     		}) // on
    }); // ready
     

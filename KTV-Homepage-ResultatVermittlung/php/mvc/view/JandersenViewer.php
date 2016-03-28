@@ -16,7 +16,6 @@ class JandersenViewer  {
 
 	public function printVereine($vereinListe) {
 		$lnk    = "";
-		$html   =  "<div id='id_verein'>";
 		foreach ($vereinListe->getVereine() as $verein) {
 			$params   = " data-id=id_khr_einhalt"
 					      . " data-action=7002" 
@@ -25,11 +24,24 @@ class JandersenViewer  {
 			$vereinName = utf8_encode($verein->getVereinName());
 			$html .= "<a class='jba-link' href='#'" .  $params . ">" . $vereinName . "</a></br>";
 		}
-		$html .= "</div>";
+		return $html;
+		
+	}
+
+	private function printVereineInMenu($vereinListe) {
+		$lnk    = "";
+		foreach ($vereinListe->getVereine() as $verein) {
+			$params = " data-id=id_khr_einhalt"
+					    . " data-action=7002"
+							. " data-regionalVereinNo=" . (is_null($verein->getRegionalVereinNo()) ? -1 : $verein->getRegionalVereinNo())
+							. " data-nationalVereinNo=" . (is_null($verein->getNationalVereinNo()) ? -1 : $verein->getNationalVereinNo());
+			$vereinName = utf8_encode($verein->getVereinName());
+			$html .=    "<li><a class='jba-link uk-dropdown-close' href='#'" .  $params . ">" . $vereinName . "</a></li>";
+		}
 		return $html;
 	}
 	
-	public function printTeamsInMenu($nationaleTeams, $regionaleTeams) {
+	private function printTeamsInMenu($nationaleTeams, $regionaleTeams) {
 		
 		$teamListe = new TeamListe();
 		foreach ($nationaleTeams->getTeams() as $team) {
@@ -54,6 +66,35 @@ class JandersenViewer  {
 		return $html;
 	}
 	
+	public function printVereinMainMenu($nationaleTeams, $regionaleTeams) {
+    $html  = '';
+	  $html .= '<li><a class= "uk-dropdown-close jba-link" href="#"  data-id="id_khr_einhalt" data-action="2000">Aktuelle Spiele   </a></li>';
+	
+	  $html .=  '<li class="uk-nav-divider"></li>';
+	  $html .=  $this->printTeamsInMenu($nationaleTeams, $regionaleTeams);
+	
+	  $html .=  '<li class="uk-nav-divider"></li>';
+	  $html .=  '<li><a class= "uk-dropdown-close jba-link" href="#"  data-id="id_khr_einhalt" data-action="2010">Alle KTV-Spiele   </a></li>';
+	  
+	  return $html;
+	}
+	
+	public function printRegionalMainMenu($vereinListe) {
+		
+		$html  = '';
+		
+		$html .= ' <li><a class= "uk-dropdown-close jba-link" href="#" '
+				   . '        data-id="id_khr_einhalt" '
+				   . '        data-action="6000" '
+					 . '        data-offset="0">Heute</a></li>';
+		
+		$html .=  '<li class="uk-nav-divider"></li>';
+		$html .=  $this->printVereineInMenu($vereinListe);
+		
+	  return $html;
+	}
+	
+	
 	public function printTeams(TeamListe $nationaleTeams, TeamListe $regionaleTeams) {
 		
 		$teamListe = new TeamListe();
@@ -65,10 +106,10 @@ class JandersenViewer  {
 		}
 		$teamListe->sortByName();
 		$teamListeArr = $teamListe->getTeams();
-		$tmp = $teamListeArr[0];
-		//$html =  "<br/><br/>" . utf8_encode($tmp->getVerein()->getVereinName()) . "<br/>";
+		$tmp   = $teamListeArr[0];
+		
+		$html  =  "<br/><br/>" . utf8_encode($tmp->getVerein()->getVereinName()) . "<br/>";
 		$html .= "<div class='uk-flex'>";
-
 		
 		$first = true;
 		foreach ($teamListe->getTeams() as $team) {
@@ -405,15 +446,24 @@ class JandersenViewer  {
   
   public function printTeam($team) {
   	
-  	$html = "<br/><br/>";
-  	$html .= utf8_encode($team->getTeamName()) . " " . $team->getTeamNameKurz() . "<br/>";
+  	$html = "<br/>";
+  	$html .= utf8_encode($team->getTeamName()) . " " . $team->getTeamNameKurz();
+  	$html = "<br/>";
   	$team->getGruppen()->sort();
+
+  	$html .= '<div id="id_acc" class="uk-accordion" data-uk-accordion>';
+  	$html .= '<script type="text/javascript"> var accordion = UIkit.accordion("#id_acc");</script>';
   	foreach ($team->getGruppen()->getGruppen() as $gruppe) {
-  		$html .= ($gruppe->isCup() ? $gruppe->getLigaName() . " " : "") . $gruppe->getGruppeName();
-  		//$gruppe->dump();
-  		$html .=   $this->formatSpiele($gruppe->getSpielListe());
-  		$html .=   $this->formatRangListe($gruppe->getRangListe());
+  		$html .= '<div class="uk-accordion-title">';
+  		$html .=   ($gruppe->isCup() ? $gruppe->getLigaName() . " " : "") . $gruppe->getGruppeName();
+  		$html .= '</div>';
+  		$html .= '<div class="uk-accordion-content">';
+  		$html .=    $this->formatSpiele($gruppe->getSpielListe());
+  		$html .=    $this->formatRangListe($gruppe->getRangListe());
+  	  $html .= '</div>';
   	}
+  	$html .= '</div>';
+  	
   	return $html;
   }
   
