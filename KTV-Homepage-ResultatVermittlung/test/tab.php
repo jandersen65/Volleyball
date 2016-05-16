@@ -55,7 +55,7 @@
 	    		$('#id-tab-2').on('click',
 					                '.jba-tab', 
 					                function(event) {	
-													  data = $(this).data();				
+													  data = $(this).data();
 													  console.log(data);
 										    	}) // on
 	     }); // ready

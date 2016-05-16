@@ -27,19 +27,6 @@ class JandersenViewer  {
 		return $html;
 		
 	}
-
-	private function printVereineInMenu($vereinListe) {
-		$lnk    = "";
-		foreach ($vereinListe->getVereine() as $verein) {
-			$params = " data-id=id_khr_einhalt"
-					    . " data-action=7002"
-							. " data-regionalVereinNo=" . (is_null($verein->getRegionalVereinNo()) ? -1 : $verein->getRegionalVereinNo())
-							. " data-nationalVereinNo=" . (is_null($verein->getNationalVereinNo()) ? -1 : $verein->getNationalVereinNo());
-			$vereinName = utf8_encode($verein->getVereinName());
-			$html .=    "<li><a class='jba-link uk-dropdown-close' href='#'" .  $params . ">" . $vereinName . "</a></li>";
-		}
-		return $html;
-	}
 	
 	private function printTeamsInMenu($nationaleTeams, $regionaleTeams) {
 		
@@ -78,6 +65,20 @@ class JandersenViewer  {
 	  
 	  return $html;
 	}
+
+
+	private function printVereineInMenu($action, $vereinListe) {
+		$lnk    = "";
+		foreach ($vereinListe->getVereine() as $verein) {
+			$params = " data-id=id_khr_einhalt"
+					. " data-action=" . $action
+					. " data-regionalVereinNo=" . (is_null($verein->getRegionalVereinNo()) ? -1 : $verein->getRegionalVereinNo())
+					. " data-nationalVereinNo=" . (is_null($verein->getNationalVereinNo()) ? -1 : $verein->getNationalVereinNo());
+			$vereinName = utf8_encode($verein->getVereinName());
+			$html .=    "<li><a class='jba-link uk-dropdown-close' href='#'" .  $params . ">" . $vereinName . "</a></li>";
+		}
+		return $html;
+	}
 	
 	public function printRegionalMainMenu($vereinListe) {
 		
@@ -89,9 +90,23 @@ class JandersenViewer  {
 					 . '        data-offset="0">Heute</a></li>';
 		
 		$html .=  '<li class="uk-nav-divider"></li>';
-		$html .=  $this->printVereineInMenu($vereinListe);
+		$html .=  $this->printVereineInMenu('7002', $vereinListe);
 		
 	  return $html;
+	}
+	public function printNationalMainMenu($vereinListe) {
+	
+		$html  = '';
+	
+		$html .= ' <li><a class= "uk-dropdown-close jba-link" href="#" '
+				  . '        data-id="id_khr_einhalt" '
+					. '        data-action="6010" '
+					. '        data-offset="0">Heute</a></li>';
+	
+		$html .=  '<li class="uk-nav-divider"></li>';
+		$html .=  $this->printVereineInMenu('7002', $vereinListe);
+	
+		return $html;
 	}
 	
 	
@@ -447,11 +462,9 @@ class JandersenViewer  {
   public function printTeam($team) {
   	
   	$html = "<br/>";
-  	$html .= utf8_encode($team->getTeamName()) . " " . $team->getTeamNameKurz();
-  	$html = "<br/>";
   	$team->getGruppen()->sort();
 
-  	$html .= '<div id="id_acc" class="uk-accordion" data-uk-accordion>';
+  	$html .= '<div id="id_acc" class="uk-accordion">';
   	$html .= '<script type="text/javascript"> var accordion = UIkit.accordion("#id_acc");</script>';
   	foreach ($team->getGruppen()->getGruppen() as $gruppe) {
   		$html .= '<div class="uk-accordion-title">';

@@ -23,26 +23,19 @@
   		return $tmp;
   	}
 
-  	public function getSpieleHeute($datumAb, $datumBis) {
-
-  		$args = array("need"      => "resultatList",
-					  				'output'    => 'xml',
-					  				'regional'  => 'Y',
-					  				'noPlausch' => 'Y',
-					  				"datumVon"  => $datumAb,
-					  				"datumBis"  => $datumBis);
-
+  	private function getResultatList($args) {
+  		
   		$spielListe = new SpielListe();
   		
   		$this->connect(VBS_WSDL);
-  	  $spieleXML = $this->client->__soapCall ("vbRequest", array($args));
-  		 
+  		$spieleXML = $this->client->__soapCall ("vbRequest", array($args));
+  			
   		$spiele = simplexml_load_string($spieleXML);
   		
   		foreach ($spiele as $tmp) {
-  				
+  		
   			$spiel =  new Spiel("2",  // regional
-  					                (String)$tmp->spielNo,
+								  					(String)$tmp->spielNo,
 								  					(String)$tmp->datum,
 								  					(String)$tmp->uhrzeit,
 								  					(String)$tmp->gruppeNo,
@@ -67,204 +60,68 @@
 								  					(String)$tmp->satz5Gast);
   			$spielListe->addSpiel($spiel);
   		}
-  		return $spielListe;
   		
+  		return $spielListe;
+  	}  
+  	
+  	public function getSpieleHeute($datumAb, $datumBis) {
+  		$args = array('need'      => 'resultatList',
+					  				'output'    => 'xml',
+					  				'regional'  => 'Y',
+					  				'noPlausch' => 'Y',
+					  				'datumVon'  => $datumAb,
+					  				'datumBis'  => $datumBis);
+  		return $this->getResultatList($args);
   	}
 
   	public function getAktuelleSpieleVerein($vereinNo, $datumAb, $datumBis) {
-  		 
-  		$args = array("need"      => "resultatList",
-  				'output'    => 'xml',
-  				"vereinNo"  => $vereinNo,
-  				'regional'    => 'Y',
-  				'noPlausch'   => 'Y',
-  				"datumVon"  => $datumAb,
-  				"datumBis"  => $datumBis);
-  	
-  		$spielListe = new SpielListe();
-  	
-  		$this->connect(VBS_WSDL);
-  		$spieleXML = $this->client->__soapCall ("vbRequest", array($args));
-  		 
-  		$spiele = simplexml_load_string($spieleXML);
-  	
-  		foreach ($spiele as $tmp) {
-  				
-  			$spiel =  new Spiel(
-  					"2",  // regional
-  			    (String)$tmp->spielNo,
-  					(String)$tmp->datum,
-  					(String)$tmp->uhrzeit,
-  					(String)$tmp->gruppeNo,
-  					$this->formatGroup((String)$tmp->gruppeName),
-  					(String)$tmp->halle,
-  					(String)$tmp->halleAdresse,
-  					(String)$tmp->teamNoHeim,
-  					(String)$tmp->teamNoGast,
-  					(String)$tmp->teamNameHeim,
-  					(String)$tmp->teamNameGast,
-  					(String)$tmp->matchHeim,
-  					(String)$tmp->matchGast,
-  					(String)$tmp->satz1Heim,
-  					(String)$tmp->satz1Gast,
-  					(String)$tmp->satz2Heim,
-  					(String)$tmp->satz2Gast,
-  					(String)$tmp->satz3Heim,
-  					(String)$tmp->satz3Gast,
-  					(String)$tmp->satz4Heim,
-  					(String)$tmp->satz4Gast,
-  					(String)$tmp->satz5Heim,
-  					(String)$tmp->satz5Gast);
-  			$spielListe->addSpiel($spiel);
-  		}
-  		return $spielListe;
-  		 
+  		
+  		$args = array('need'      => 'resultatList',
+					  				'output'    => 'xml',
+					  				'vereinNo'  => $vereinNo,
+					  				'regional'    => 'Y',
+					  				'noPlausch'   => 'Y',
+					  				'datumVon'  => $datumAb,
+					  				'datumBis'  => $datumBis);
+  		
+  		return $this->getResultatList($args);
   	} //getAktuelleSpiele
   	
   	
   	public function getAktuelleSpiele($datumAb, $datumBis) {
   	
-  		$args = array("need"      => "resultatList",
+  		$args = array('need'      => 'resultatList',
 	                  'output'    => 'xml',
-  				          "vereinNo"  => KTVRIEHEN_CLUB_NO_BS,
+  				          'vereinNo'  => KTVRIEHEN_CLUB_NO_BS,
 										'regional'    => 'Y',
 										'noPlausch'   => 'Y',
-  				          "datumVon"  => $datumAb,
-  				          "datumBis"  => $datumBis);
+  				          'datumVon'  => $datumAb,
+  				          'datumBis'  => $datumBis);
   		
-  		$spielListe = new SpielListe();
+  		return $this->getResultatList($args);
   		
-  	  $this->connect(VBS_WSDL);
-  		$spieleXML = $this->client->__soapCall ("vbRequest", array($args));
-  	
-  		$spiele = simplexml_load_string($spieleXML);
-
-  		foreach ($spiele as $tmp) {
-  			
-  			$spiel =  new Spiel("2",  // regional
-  			                    (String)$tmp->spielNo,
-								  					(String)$tmp->datum,
-								  					(String)$tmp->uhrzeit,
-								  					(String)$tmp->gruppeNo,
-								  					$this->formatGroup((String)$tmp->gruppeName),
-								  					(String)$tmp->halle,
-								  					(String)$tmp->halleAdresse,
-								  					(String)$tmp->teamNoHeim,
-								  					(String)$tmp->teamNoGast,
-								  					(String)$tmp->teamNameHeim,
-								  					(String)$tmp->teamNameGast,
-								  					(String)$tmp->matchHeim,
-								  					(String)$tmp->matchGast,
-								  					(String)$tmp->satz1Heim,
-								  					(String)$tmp->satz1Gast,
-								  					(String)$tmp->satz2Heim,
-								  					(String)$tmp->satz2Gast,
-								  					(String)$tmp->satz3Heim,
-								  					(String)$tmp->satz3Gast,
-								  					(String)$tmp->satz4Heim,
-								  					(String)$tmp->satz4Gast,
-								  					(String)$tmp->satz5Heim,
-								  					(String)$tmp->satz5Gast);
-  			$spielListe->addSpiel($spiel);
-  		}
-  		return $spielListe;
-  	
   	} //getAktuelleSpiele
   	
   	
   	public function getSpieleTeamGruppe($teamNo, $gruppeNo) {
   		
-  		$args = array("need"      => "resultatList",
+  		$args = array('need'      => 'resultatList',
 	                  'output'    => 'xml',
-  				          "teamNo"    => $teamNo,
-  				          "gruppeNo"  => $gruppeNo);
+  				          'teamNo'    => $teamNo,
+  				          'gruppeNo'  => $gruppeNo);
   		
-  		$spielListe = new SpielListe();
-  		
-  		$this->connect(VBS_WSDL);
-  		$spieleXML = $this->client->__soapCall("vbRequest", array($args));
-  		
-  		//echo "getSpieleTeamGruppe" . $spieleXML;
-  		
-  		$spiele = simplexml_load_string($spieleXML);
-  		
-  		foreach ($spiele as $tmp) {
-  			
-  			$spiel =  new Spiel("2",  // regional
-  			                    (String)$tmp->spielNo,
-								  					(String)$tmp->datum,
-								  					(String)$tmp->uhrzeit,
-								  					(String)$tmp->gruppeNo,
-								  					$this->formatGroup((String)$tmp->gruppeName),
-								  					(String)$tmp->halle,
-								  					(String)$tmp->halleAdresse,
-								  					(String)$tmp->teamNoHeim,
-								  					(String)$tmp->teamNoGast,
-								  					(String)$tmp->teamNameHeim,
-								  					(String)$tmp->teamNameGast,
-								  					(String)$tmp->matchHeim,
-								  					(String)$tmp->matchGast,
-								  					(String)$tmp->satz1Heim,
-								  					(String)$tmp->satz1Gast,
-								  					(String)$tmp->satz2Heim,
-								  					(String)$tmp->satz2Gast,
-								  					(String)$tmp->satz3Heim,
-								  					(String)$tmp->satz3Gast,
-								  					(String)$tmp->satz4Heim,
-								  					(String)$tmp->satz4Gast,
-								  					(String)$tmp->satz5Heim,
-								  					(String)$tmp->satz5Gast);
-  			$spielListe->addSpiel($spiel);
-  		}
-  		
-  		return $spielListe;
+  		return $this->getResultatList($args);
   	}
   	
   	
   	public function getTeamSpiele($teamNo) {
   		 
-  		$args = array("need"      => "resultatList",
+  		$args = array('need'      => 'resultatList',
 	                  'output'    => 'xml',
-  				          "teamNo"    => $teamNo);
+  				          'teamNo'    => $teamNo);
   		
-  		$spielListe = new SpielListe();
+  		return $this->getResultatList($args);
   		
-  	  $this->connect(VBS_WSDL);
-  	 	$spieleXML = $this->client->__soapCall ("vbRequest", array($args));
-
-  	 	//echo "getTeamSpiele" . $spieleXML;
-  	 	
-  		$spiele = simplexml_load_string($spieleXML);
-  		 
-  		foreach ($spiele as $tmp) {
-  			$spiel =  new Spiel("2",  // regional
-  			                    (String)$tmp->spielNo,
-								  					(String)$tmp->datum,
-								  					(String)$tmp->uhrzeit,
-								  					(String)$tmp->gruppeNo,
-								  					$this->formatGroup((String)$tmp->gruppeName),
-								  					(String)$tmp->halle,
-								  					(String)$tmp->halleAdresse,
-								  					(String)$tmp->teamNoHeim,
-								  					(String)$tmp->teamNoGast,
-								  					(String)$tmp->teamNameHeim,
-								  					(String)$tmp->teamNameGast,
-								  					(String)$tmp->matchHeim,
-								  					(String)$tmp->matchGast,
-								  					(String)$tmp->satz1Heim,
-								  					(String)$tmp->satz1Gast,
-								  					(String)$tmp->satz2Heim,
-								  					(String)$tmp->satz2Gast,
-								  					(String)$tmp->satz3Heim,
-								  					(String)$tmp->satz3Gast,
-								  					(String)$tmp->satz4Heim,
-								  					(String)$tmp->satz4Gast,
-								  					(String)$tmp->satz5Heim,
-								  					(String)$tmp->satz5Gast);
-  			$spielListe->addSpiel($spiel);
-  		}
-  		return $spielListe;
-  		 
   	} //getTeamSpiele
   	
   	
@@ -302,60 +159,15 @@
 
 
   	public function naechsteGruppenSpiele($gruppe, $datumAb, $datumBis) {
-
   		
-  		$args = array("need"      => "resultatList",
+  		$args = array('need'      => 'resultatList',
 	                  'output'    => 'xml',
-  				          "datumVon"  => $datumAb,
-  				          "datumBis"  => $datumBis,
-					  				"gruppeNo"  => $gruppe);
-  		
-  		//var_dump($args);
-  		
-  		$spielListe = new SpielListe();
-  		
-  	  $this->connect(VBS_WSDL);
-  	  $spieleXML = $this->client->__soapCall ("vbRequest", array($args));
+  				          'datumVon'  => $datumAb,
+  				          'datumBis'  => $datumBis,
+					  				'gruppeNo'  => $gruppe);
 
-  		$spiele = simplexml_load_string($spieleXML);
-  		//echo "naechsteGruppenSpiele" . $spieleXML;
-
-  		//$datumAbDt  = date_create_from_format('d.m.Y', $datumAb);
-  		//$datumBisDt = date_create_from_format('d.m.Y', $datumBis);
-  		foreach ($spiele as $tmp) {
-  			
-  			//$anspielDatum = date_create_from_format('d.m.Y', (String)$tmp->datum);
-  			//if (!($anspielDatum > $datumAbDt && $anspielDatum < $datumBisDt)) {
-  			//	continue;
-  			//}
-  			
-  			$spiel =  new Spiel("2",  // regional
-  			                    (String)$tmp->spielNo,
-								  					(String)$tmp->datum,
-								  					(String)$tmp->uhrzeit,
-								  					(String)$tmp->gruppeNo,
-								  					$this->formatGroup((String)$tmp->gruppeName),
-								  					(String)$tmp->halle,
-								  					(String)$tmp->halleAdresse,
-								  					(String)$tmp->teamNoHeim,
-								  					(String)$tmp->teamNoGast,
-								  					(String)$tmp->teamNameHeim,
-								  					(String)$tmp->teamNameGast,
-								  					(String)$tmp->matchHeim,
-								  					(String)$tmp->matchGast,
-								  					(String)$tmp->satz1Heim,
-								  					(String)$tmp->satz1Gast,
-								  					(String)$tmp->satz2Heim,
-								  					(String)$tmp->satz2Gast,
-								  					(String)$tmp->satz3Heim,
-								  					(String)$tmp->satz3Gast,
-								  					(String)$tmp->satz4Heim,
-								  					(String)$tmp->satz4Gast,
-								  					(String)$tmp->satz5Heim,
-								  					(String)$tmp->satz5Gast);
-  			$spielListe->addSpiel($spiel);
-  		}
-  		return $spielListe;  		
+  		return $this->getResultatList($args);
+  		
   	}
   	
   	public function getTeam($teamNo) {

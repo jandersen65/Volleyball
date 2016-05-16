@@ -290,7 +290,9 @@ class ResultatController {
 	}
 
 	public function setupNationalMainMenu() {
-		echo 'TBD - setupNationalMainMenu';
+		$conf = new KHR_Conf();
+		$vereinListe = $conf->getNationaleVereine();
+		echo $this->viewer->printNationalMainMenu($vereinListe);
 	}
 	
 } 

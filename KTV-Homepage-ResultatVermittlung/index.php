@@ -57,7 +57,7 @@
               </li>
               <li data-uk-dropdown="{mode:'click'}">
                 <a class="jba-link" href="#" data-id="id-khr-natio-menu" data-action="9020">National      </a>
-                  <div id="id-khr-natio-menu" class="uk-dropdown uk-dropdown-small">
+                  <div id="id-khr-natio-menu" class="uk-dropdown uk-dropdown-scrollable">
                     <ul class="uk-dropdown-close uk-nav uk-nav-dropdown">
                     </ul>  
                   </div>       
