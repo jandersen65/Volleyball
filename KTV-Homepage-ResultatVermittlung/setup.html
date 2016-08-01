@@ -1,19 +1,46 @@
 
+<!DOCTYPE html>
+
+<html>
+
 <head>
+  <script type="text/javascript" src="lib/jquery-1.11.1.min.js" ></script>   
 </head>
 
 <body>
+
+<script>
+  function jQueryVersion() {
+    alert("jQuery version: " + $.fn.jquery);
+  }
+</script>
 
   <h4>Generelt</h4>
   <ul>
     <li><a href="php/setup/phpinfo.php">php info</a></li>
   </ul>
   
+  <h4>jQuery</h4>
+  <button onclick="jQueryVersion();">jQuery Version
+  </button>
+  
+  
+  
+  <h4>Volley Basel</h4>
+  <ul>
+    <li><a href="php/setup/volleybaselvereine.php">Vereine</a></li>
+    <li><a href="php/setup/volleybaselactiveteams.php">Aktive Teams</a></li>
+    <li><a href="php/setup/volleybaselktvriehenteams.php">KTV Riehen Teams</a></li>
+  </ul>
+  
   <h4>Swiss Volley</h4>
   <ul>
     <li><a href="php/setup/swissvolleyhallen.php">Hallen</a></li>
     <li><a href="php/setup/swissvolleyactiveteams.php">Aktive Teams</a></li>
+    <li><a href="php/setup/swissvolleyktvriehenteams.php">KTV Riehen Teams</a></li>
   </ul>
   
 
   </body>
+  
+  </html>

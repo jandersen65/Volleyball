@@ -2,6 +2,17 @@
 
 class JandersenViewer  {
 
+	
+	public function getRegionalVereinNo($nationalVereinNo) {
+		if ($nationalVereinNo == -1) {
+			return -1;
+		}
+		$conf = new KHR_Conf();
+		$vereine = $conf->getVolleyBaselVereine();
+		$verein = $vereine->getVerein("", $nationalVereinNo);
+		return is_null($verein) ? "-1" : $verein->getRegionalVereinNo();
+	}
+	
 	public function teamNichtKonf($teamName) {
 		$html   =  "";
 		$html  .=  "Zur Zeit hat " . $teamName . " keine geplanten Spiele";
@@ -39,7 +50,8 @@ class JandersenViewer  {
 		}
 		$teamListe->sortByName();
 
-		$html = ""; //'<li class="uk-nav-header">Mannschaften</li>';
+		$html  = ""; //'<li class="uk-nav-header">Mannschaften</li>';
+		
 		foreach ($teamListe->getTeams() as $team) {
 			$params = ' data-id=id_khr_einhalt'
 					    . ' data-action=7020'
@@ -123,30 +135,35 @@ class JandersenViewer  {
 		$teamListeArr = $teamListe->getTeams();
 		$tmp   = $teamListeArr[0];
 		
-		$html  =  "<br/><br/>" . utf8_encode($tmp->getVerein()->getVereinName()) . "<br/>";
-		$html .= "<div class='uk-flex'>";
-		
-		$first = true;
-		foreach ($teamListe->getTeams() as $team) {
-			
-		//if ($first) {
-		//	$first = false;
-	  // 	$params = " data-id=id_gen_team"
-		//		        . " data-action=2001"
-		//		        . " data-regionalVereinNo=" . (is_null($team->getRegionalVereinNo()) ? -1 : $team->getRegionalVereinNo())
-		//		        . " data-nationalVereinNo=" . (is_null($team->getNationalVereinNo()) ? -1 : $team->getNationalVereinNo());
-		//    $html .= "<a class='jba-link uk-button' href='#'" .  $params . ">Aktuelle Spiele</a></br>";
-		//	}
-			
-			$params = ' data-id=id_gen_team'
-					    . ' data-action=7020' 
-					    . ' data-verband=' . $team->getVerband()
-				      . ' data-teamno='  . $team->getTeamNo();
-			$teamName = utf8_encode($team->getTeamNameKurz());">$teamName" . "</a></br>";
-
-			$html .= "<a class='jba-link uk-button' href='#'" .  $params . ">" . $teamName . "</a></br>";
+		if (!is_null($tmp)) {
+			$html  =  "<br/><br/>" . utf8_encode($tmp->getVerein()->getVereinName()) . "<br/>";
+			$html .= "<div class='uk-flex'>";
+						
+			$first = true;
+			foreach ($teamListe->getTeams() as $team) {
+				
+			  if ($first) {
+				  $first = false;
+				  $nationalVereinNo = is_null($team->getNationalVereinNo()) ? -1 : $team->getNationalVereinNo();
+				  $regionalVereinNo = is_null($team->getRegionalVereinNo()) ? $this->getRegionalVereinNo($nationalVereinNo) 
+				                                                            : $team->getRegionalVereinNo();
+		   	  $params = " data-id=id_gen_team"
+					        . " data-action=2001"
+					        . " data-regionalVereinNo='" . $regionalVereinNo . "'"
+					        . " data-nationalVereinNo='" . $nationalVereinNo . "'";
+			    $html .= "<a class='jba-link uk-button' href='#'" .  $params . ">Aktuelle Spiele</a></br>" ;
+		    }
+				
+				$params = ' data-id=id_gen_team'
+						    . ' data-action=7020' 
+						    . ' data-verband=' . $team->getVerband()
+					      . ' data-teamno='  . $team->getTeamNo();
+				$teamName = utf8_encode($team->getTeamNameKurz());">$teamName" . "</a></br>";
+	
+				$html .= "<a class='jba-link uk-button' href='#'" .  $params . ">" . $teamName . "</a></br>";
+			}
+		  $html .= "</div>";
 		}
-		$html .= "</div>";
 		$html .= "<div id='id_gen_team'></div>";
 		return $html;
 	}
@@ -283,7 +300,7 @@ class JandersenViewer  {
 										.   "data-teamno="   . $spiel->getHeimTeamNo()
 										. "><i class='uk-icon-share'></i>"
 										. "</a>"                                 . "&nbsp;"
-										.  $spiel->getHeimTeamName();
+										.  $spiel->getHeimTeamNameKurz();
 				
 			$auswTeamLink = "<a "
 					          .   "class="         . "jba-link"             . " "
@@ -294,7 +311,7 @@ class JandersenViewer  {
 										.   "data-teamno="   . $spiel->getAuswTeamNo()
 										. "><i class='uk-icon-share'></i>"
 										. "</a>"                                 . "&nbsp;"
-										. $spiel->getAuswTeamName();
+										. $spiel->getAuswTeamNameKurz();
 				
 			
 			$html .= "<tr>";
@@ -308,17 +325,26 @@ class JandersenViewer  {
 			}
 			else {
 				
-				$googleMapsRef = "http://maps.google.com?q="
-				        		  . htmlentities($spiel->getHalleAdresse(), ENT_QUOTES);
+				if (!is_null($spiel->getHalleAdresse())) {
+				  $googleMapsRef = "http://maps.google.com?q="
+				           		   . htmlentities($spiel->getHalleAdresse(), ENT_QUOTES);
+			  	$halleLink = "<a "
+					    	     .   "href='"          . $googleMapsRef                   . "'"
+						         .   " target='_blank'"
+						         . "><i class='uk-icon-globe'></i>"
+						         . "</a>"                                 . "&nbsp;"
+						         . $spiel->getHalle();
+				  $html .= "<td>" . $halleLink . "</td>";
+				}
+				else {
+					if (!is_null($spiel->getHalle())) {
+						$html .= "<td>" . $spiel->getHalle() . "</td>";
+					}
+					else {
+						$html .= "<td>" . "&nbsp;" . "</td>";
+					}
+				}
 				
-				$halleLink = "<a "
-						.   "href='"          . $googleMapsRef                   . "'"
-						.   " target='_blank'"
-						. "><i class='uk-icon-globe'></i>"
-						. "</a>"                                 . "&nbsp;"
-						. $spiel->getHalle();
-				//$spiel->getHalleAdresse()
-				$html .= "<td>" . $halleLink . "</td>";
 				
 				
 				//$html .= "<td>" . $spiel->getHalle() . "<br/>";
@@ -366,7 +392,7 @@ class JandersenViewer  {
 										.   "data-teamno="   . $spiel->getHeimTeamNo()
 										. "><i class='uk-icon-share'></i>"
 										. "</a>"                                 . "&nbsp;"
-										.  $spiel->getHeimTeamName();
+										.  $spiel->getHeimTeamNameKurz();
 			
 			$auswTeamLink = "<a "
 				           	.   "class="         . "jba-link"             . " "
@@ -377,7 +403,7 @@ class JandersenViewer  {
 										.   "data-teamno="   . $spiel->getAuswTeamNo()
 										. "><i class='uk-icon-share'></i>"
 										. "</a>"                                 . "&nbsp;"
-										. $spiel->getAuswTeamName();
+										. $spiel->getAuswTeamNameKurz();
 			
 			$html .= "<tr>";
 			$html .=   "<td>" . $spiel->getSpielDatum()   . "</td>";
@@ -390,18 +416,27 @@ class JandersenViewer  {
 			}
 			else {
 				
-				$googleMapsRef = "http://maps.google.com?q=" 
-						           . htmlentities($spiel->getHalleAdresse(), ENT_QUOTES);
-				
-				$halleLink = "<a "
-						       .   "href='"          . $googleMapsRef                   . "'" 
-						       .   " target='_blank'"
-						       . "><i class='uk-icon-globe'></i>"
-						       . "</a>"                                 . "&nbsp;"
-						       . $spiel->getHalle();
-				//$spiel->getHalleAdresse()
-				$html .= "<td>" . $halleLink . "</td>";
+			  if (!strcmp($spiel->getHalleAdresse(), "") == 0) {
+				  $googleMapsRef = "http://maps.google.com?q="
+				           		   . htmlentities($spiel->getHalleAdresse(), ENT_QUOTES);
+			  	$halleLink = "<a "
+					    	     .   "href='"          . $googleMapsRef                   . "'"
+						         .   " target='_blank'"
+						         . "><i class='uk-icon-globe'></i>"
+						         . "</a>"                                 . "&nbsp;"
+						         . $spiel->getHalle();
+				  $html .= "<td>" . $halleLink . "</td>";
+				}
+				else {
+					if (!strcmp($spiel->getHalle(), "") == 0) {
+						$html .= "<td>" . $spiel->getHalle() . "</td>";
+					}
+					else {
+						$html .= "<td>" . "&nbsp;" . "</td>";
+					}
+				}
 			}
+			
 			$html .= "</tr>";
 		}  // foreach spiel
 		

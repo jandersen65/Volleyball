@@ -55,8 +55,10 @@
   	}
 
   	public function getAlleSpiele() {
-  		$datumAb  = date("Y-m-d", mktime(0, 0, 0,  8, 1, 2015));
-  		$datumBis = date("Y-m-d", mktime(0, 0, 0,  6, 1, 2016));
+  		$monat    = date("n");
+  		$year     = date("Y") + (($monat > 4) ? 0 : - 1);  
+  		$datumAb  = date("Y-m-d", mktime(0, 0, 0,  8, 1, $year));
+  		$datumBis = date("Y-m-d", mktime(0, 0, 0,  6, 1, $year + 1));
   		$spiele = $this->dataservice->getAktuelleSpiele($datumAb, $datumBis);
   		return $spiele;
   	} // getAlleSpiele

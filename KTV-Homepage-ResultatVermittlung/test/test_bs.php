@@ -41,7 +41,6 @@ function wscall($req) {
 	//return $response;
 }
 
-http://www.mabest.net/VBVB/2015/service.php?need=vereinList&hasNoVerband=Y&detail=teamList,ligaList
 
 $teamList = array(
 		"need"         => "vereinList",

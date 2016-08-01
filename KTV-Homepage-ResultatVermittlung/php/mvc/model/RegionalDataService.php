@@ -97,7 +97,7 @@
 	  	  	if (   strcmp($tmp["vereinNo"], $vereinNo) == 0  
 	  	  	    && strcmp($tmp["liga"],     "")        != 0) {
 	  	  		$verband  = $conf::REGIONAL;
-	  	  		$verein       = new Verein($tmp["vereinName"], $tmp["vereinNo"], null);
+	  	  		$verein       = new Verein($tmp["vereinName"], null, $tmp["vereinNo"]);
 	  	  		$teamNo       = $tmp["teamNo"];
 	  	  		$teamName     = $tmp["teamName"];
 	  	  		$primaereLiga = $tmp["liga"];

@@ -36,7 +36,12 @@ $( "body" ).on( "click", "p", function() {
 </script>
  
 <?php 
-var_dump($_ENV);
+//var_dump($_ENV);
+
+$monat = date("n");
+$year  = date("Y") + (("12" > 4) ? 1 : - 1);
+echo $monat . ", " . $year;
+
 ?>
 
 </body>

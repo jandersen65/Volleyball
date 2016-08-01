@@ -26,6 +26,15 @@ class Spiel {
 	private $heimTeamSaetzPunkte5;
 	private $auswTeamSaetzPunkte5;
 
+
+	private $wochenTage = array("1" => "Mo",
+															"2" => "Di",
+															"3" => "Mi",
+															"4" => "Do",
+															"5" => "Fr",
+															"6" => "Sa",
+															"7" => "So");
+
 	function __construct(
 			$verband,
 			$spielNo,
@@ -104,9 +113,21 @@ class Spiel {
 	}
 
 	public function getSpielDatum() {
-		return ($this->datum != NULL) 
-		          ? $this->datum->format('d.m H:i') 
-		          : "";
+		
+		if (is_null($this->datum)) {
+			return "";
+		}
+		
+		$wochenTag = $this->wochenTage[$this->datum->format('N')];
+		
+		$festgelegt = true;
+		if (strcmp($this->datum->format('H'), "00") == 0) {
+			$festgelegt = false;
+		}
+		 
+		return (!$festgelegt ? "(" : "")
+		     . $wochenTag . " " . $this->datum->format('d.m H:i')
+		     . (!$festgelegt ? ")" : "");
 	}
 	
 	public function getHeimTeamNo() {
@@ -120,9 +141,20 @@ class Spiel {
 	public function getHeimTeamName() {
 		return $this->heimTeamName;
 	}
+
+	private function kurzName($name) {
+		if (strlen($name) > 20) {
+			return substr($name, 0, 15) . "...";
+		}
+		return $name;
+	}
 	
-	public function getAuswTeamName() {
-		return $this->auswTeamName;
+	public function getHeimTeamNameKurz() {
+		return $this->kurzName($this->heimTeamName);
+	}
+	
+	public function getAuswTeamNameKurz() {
+		return $this->kurzName($this->auswTeamName);
 	}
 
 	public function getGruppenName() {
