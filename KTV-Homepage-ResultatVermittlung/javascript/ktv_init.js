@@ -14,7 +14,7 @@
     		$('#idMainResultate').off();
     		$('#idMainResultate').on(
     			 'click',
-                 '.jba-link', 
+                 '.khr_link', 
                  function(event) {
 				   event.preventDefault(); 		
 				   data = $(this).data();											    		  

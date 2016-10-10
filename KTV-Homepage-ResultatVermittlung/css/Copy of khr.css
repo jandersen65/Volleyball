@@ -1,0 +1,29 @@
+/*
+ * Visibility
+ * Avoids setting display to `block` so it works also with `inline-block` and `table`
+ */
+ 
+ 
+@media screen and (min-device-width: 360px) and (orientation: landscape) {
+    
+    .khr-hidden-large {
+      display: none !important;
+    }
+    
+    .khr-visible-small {
+      display: none !important;
+    }
+    
+}
+
+@media not screen and (min-device-width: 360px) and (orientation: landscape) {
+    
+    .khr-visible-large {
+      display: none !important;
+    }
+    
+    .khr-hidden-small {
+      display: none !important;
+    }
+    
+}

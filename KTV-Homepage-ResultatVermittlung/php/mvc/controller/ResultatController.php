@@ -266,6 +266,7 @@ class ResultatController {
 		}
 		
 		$team = $this->model->getTeam($teamNo);
+
 		echo $this->viewer->printTeam($team);
 	}
 	

@@ -42,21 +42,21 @@
         <div class="uk-container">
            <ul id="idMainMenu" class="uk-tab" data-uk-tab="">
               <li data-uk-dropdown="{mode:'click'}">
-                <a class="jba-link" href="#" data-id="id-khr-ktv-menu" data-action="9000">KTV Riehen      </a>
+                <a class="khr_link" href="#" data-id="id-khr-ktv-menu" data-action="9000">KTV Riehen      </a>
                   <div id="id-khr-ktv-menu" class="uk-dropdown uk-dropdown-small">
                     <ul class="uk-dropdown-close uk-nav uk-nav-dropdown">
                     </ul>  
                   </div>       
               </li>
               <li data-uk-dropdown="{mode:'click'}">
-                <a class="jba-link" href="#" data-id="id-khr-regio-menu" data-action="9010">Regional      </a>
+                <a class="khr_link" href="#" data-id="id-khr-regio-menu" data-action="9010">Regional      </a>
                   <div id="id-khr-regio-menu" class="uk-dropdown uk-dropdown-scrollable">
                     <ul class="uk-dropdown-close uk-nav uk-nav-dropdown">
                     </ul>  
                   </div>       
               </li>
               <li data-uk-dropdown="{mode:'click'}">
-                <a class="jba-link" href="#" data-id="id-khr-natio-menu" data-action="9020">National      </a>
+                <a class="khr_link" href="#" data-id="id-khr-natio-menu" data-action="9020">National      </a>
                   <div id="id-khr-natio-menu" class="uk-dropdown uk-dropdown-scrollable">
                     <ul class="uk-dropdown-close uk-nav uk-nav-dropdown">
                     </ul>  

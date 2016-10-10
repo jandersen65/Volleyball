@@ -15,7 +15,7 @@ function wscall($req) {
 $teamList = array("need"    => "vereinList",
 									'output'    => 'xml',
 									//'output'    => 'xml',
-									//"vereinNo"  => "1036",
+									//"vereinNo"  => "1018",
 									"hasNoVerband" => "Y",
 									//"target"  => "file",
 									//"detail"  => "teamList,ligaList,resultatList"
@@ -34,12 +34,15 @@ foreach (simplexml_load_string($result) as $verein) {
 		$vereinNo   = (String)$verein->vereinNo;
 		$vereinName = htmlentities((String)$verein->vereinName);
 		$liga       = (String)$team->ligaList->liga[0]->ligaUID;
-		if (!in_array($liga, array("CEV", "1L D", "1L H", "NLB D", "NLB H", "NLA D", "NLA H", "CUP D", "CUP H"))) {
-			echo ',array(teamNo=>"'     . $teamNo     . '", '
-			          . 'teamName=>"'   . $teamName   . '", '
-			          . 'liga=>"'       . $liga       . '", '
-			          . 'vereinNo=>'    . $vereinNo   . ', '
-			          . 'vereinName=>"' . $vereinName . '"' . ')'  . '<br>';
+		foreach ($team->ligaList->liga as $liga) {
+			$ligaUID = $liga->ligaUID;
+		  if (!in_array($ligaUID, array("CEV", "1L D", "1L H", "NLB D", "NLB H", "NLA D", "NLA H", "CUP D", "CUP H"))) {
+		  	echo ',array(teamNo=>"'   . $teamNo         . '", '
+			          . 'teamName=>"'   . $teamName       . '", '
+			          . 'liga=>"'       . $ligaUID         . '", '
+			          . 'vereinNo=>'    . $vereinNo       . ', '
+			          . 'vereinName=>"' . $vereinName     . '"' . ')'  . '<br>';
+		  }
 		}
 	}
 }

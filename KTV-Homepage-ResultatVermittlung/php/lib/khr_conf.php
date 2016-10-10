@@ -197,12 +197,12 @@ class KHR_Conf {
 ,array(teamNo=>"1333", teamName=>"VBC Allschwil D4", liga=>"5L D", vereinNo=>1001, vereinName=>"VBC Allschwil")
 ,array(teamNo=>"1153", teamName=>"VBC Allschwil H2", liga=>"3L H", vereinNo=>1001, vereinName=>"VBC Allschwil")
 ,array(teamNo=>"1292", teamName=>"VBC Allschwil U15", liga=>"U15 D", vereinNo=>1001, vereinName=>"VBC Allschwil")
-,array(teamNo=>"1224", teamName=>"VBC Allschwil U17", liga=>"U17 D", vereinNo=>1001, vereinName=>"VBC Allschwil")
 ,array(teamNo=>"1223", teamName=>"VBC Allschwil U19", liga=>"U19 D", vereinNo=>1001, vereinName=>"VBC Allschwil")
+,array(teamNo=>"1224", teamName=>"VBC Allschwil U19 2", liga=>"U19 D", vereinNo=>1001, vereinName=>"VBC Allschwil")
 ,array(teamNo=>"1012", teamName=>"TV Arlesheim", liga=>"2L H", vereinNo=>1002, vereinName=>"TV Arlesheim")
-,array(teamNo=>"1318", teamName=>"TV Arlesheim", liga=>"", vereinNo=>1002, vereinName=>"TV Arlesheim")
-,array(teamNo=>"1348", teamName=>"TV Arlesheim", liga=>"", vereinNo=>1002, vereinName=>"TV Arlesheim")
-,array(teamNo=>"1349", teamName=>"TV Arlesheim", liga=>"", vereinNo=>1002, vereinName=>"TV Arlesheim")
+,array(teamNo=>"1349", teamName=>"TV Arlesheim", liga=>"U19 D", vereinNo=>1002, vereinName=>"TV Arlesheim")
+,array(teamNo=>"1318", teamName=>"TV Arlesheim 1", liga=>"U17 D", vereinNo=>1002, vereinName=>"TV Arlesheim")
+,array(teamNo=>"1377", teamName=>"TV Arlesheim 2", liga=>"U17 D", vereinNo=>1002, vereinName=>"TV Arlesheim")
 ,array(teamNo=>"1043", teamName=>"TV Arlesheim D1", liga=>"3L D", vereinNo=>1002, vereinName=>"TV Arlesheim")
 ,array(teamNo=>"1213", teamName=>"TV Arlesheim D2", liga=>"3L D", vereinNo=>1002, vereinName=>"TV Arlesheim")
 ,array(teamNo=>"1308", teamName=>"TV Arlesheim H2", liga=>"3L H", vereinNo=>1002, vereinName=>"TV Arlesheim")
@@ -212,42 +212,42 @@ class KHR_Conf {
 ,array(teamNo=>"1073", teamName=>"KTV Basel ", liga=>"3L H", vereinNo=>1006, vereinName=>"KTV Basel ")
 ,array(teamNo=>"1009", teamName=>"KTV Basel", liga=>"2L D", vereinNo=>1006, vereinName=>"KTV Basel ")
 ,array(teamNo=>"1017", teamName=>"KTV Basel 1915", liga=>"2L H", vereinNo=>1006, vereinName=>"KTV Basel ")
-,array(teamNo=>"1295", teamName=>"Traktor Basel", liga=>"", vereinNo=>1007, vereinName=>"Traktor Basel")
-,array(teamNo=>"1352", teamName=>"Traktor Basel 1", liga=>"", vereinNo=>1007, vereinName=>"Traktor Basel")
 ,array(teamNo=>"1019", teamName=>"Traktor Basel 2", liga=>"2L H", vereinNo=>1007, vereinName=>"Traktor Basel")
 ,array(teamNo=>"1254", teamName=>"Traktor Basel 3", liga=>"2L H", vereinNo=>1007, vereinName=>"Traktor Basel")
 ,array(teamNo=>"1303", teamName=>"Traktor Basel 4", liga=>"4L H", vereinNo=>1007, vereinName=>"Traktor Basel")
-,array(teamNo=>"1335", teamName=>"Traktor Basel Junioren U19", liga=>"", vereinNo=>1007, vereinName=>"Traktor Basel")
-,array(teamNo=>"1350", teamName=>"Traktor Basel Junioren U23", liga=>"", vereinNo=>1007, vereinName=>"Traktor Basel")
+,array(teamNo=>"1335", teamName=>"Traktor Basel Junioren U19", liga=>"U19 H", vereinNo=>1007, vereinName=>"Traktor Basel")
+,array(teamNo=>"1350", teamName=>"Traktor Basel Junioren U23", liga=>"U23 H", vereinNo=>1007, vereinName=>"Traktor Basel")
 ,array(teamNo=>"1129", teamName=>"DR Binningen 1", liga=>"4L D", vereinNo=>1010, vereinName=>"DR Binningen")
 ,array(teamNo=>"1344", teamName=>"DR Binningen 2", liga=>"5L D", vereinNo=>1010, vereinName=>"DR Binningen")
 ,array(teamNo=>"1336", teamName=>"DR Binningen 3", liga=>"5L D", vereinNo=>1010, vereinName=>"DR Binningen")
 ,array(teamNo=>"1085", teamName=>"TV Bretzwil", liga=>"4L D", vereinNo=>1011, vereinName=>"TV Bretzwil")
 ,array(teamNo=>"1044", teamName=>"VBC Brislach", liga=>"4L D", vereinNo=>1012, vereinName=>"VBC Brislach")
 ,array(teamNo=>"1102", teamName=>"VBC Brislach", liga=>"MP 2L", vereinNo=>1012, vereinName=>"VBC Brislach")
+,array(teamNo=>"1375", teamName=>"VBC Brislach", liga=>"U17 D", vereinNo=>1012, vereinName=>"VBC Brislach")
 ,array(teamNo=>"1063", teamName=>"VBC Bubendorf 1", liga=>"2L H", vereinNo=>1103, vereinName=>"VBC Bubendorf")
 ,array(teamNo=>"1005", teamName=>"VBC Bubendorf D1", liga=>"2L D", vereinNo=>1103, vereinName=>"VBC Bubendorf")
 ,array(teamNo=>"1064", teamName=>"VBC Bubendorf D2", liga=>"3L D", vereinNo=>1103, vereinName=>"VBC Bubendorf")
 ,array(teamNo=>"1331", teamName=>"VBC Bubendorf D3", liga=>"4L D", vereinNo=>1103, vereinName=>"VBC Bubendorf")
 ,array(teamNo=>"1332", teamName=>"VBC Bubendorf H2", liga=>"4L H", vereinNo=>1103, vereinName=>"VBC Bubendorf")
 ,array(teamNo=>"1068", teamName=>"VBC Bubendorf Mixed", liga=>"MP 2L", vereinNo=>1103, vereinName=>"VBC Bubendorf")
-,array(teamNo=>"1359", teamName=>"VBC Bubendorf U17 1", liga=>"", vereinNo=>1103, vereinName=>"VBC Bubendorf")
+,array(teamNo=>"1359", teamName=>"VBC Bubendorf U17 1", liga=>"U17 D", vereinNo=>1103, vereinName=>"VBC Bubendorf")
+,array(teamNo=>"1389", teamName=>"VBC Bubendorf U19", liga=>"U19 D", vereinNo=>1103, vereinName=>"VBC Bubendorf")
+,array(teamNo=>"1388", teamName=>"VBC Bubendorf U23", liga=>"U23 H", vereinNo=>1103, vereinName=>"VBC Bubendorf")
 ,array(teamNo=>"1075", teamName=>"VB Ettingen", liga=>"4L D", vereinNo=>1014, vereinName=>"VB Ettingen")
-,array(teamNo=>"1078", teamName=>"FP Olympia", liga=>"", vereinNo=>1015, vereinName=>"FP Olympia")
 ,array(teamNo=>"1269", teamName=>"FP Olympia 1", liga=>"2L H", vereinNo=>1015, vereinName=>"FP Olympia")
 ,array(teamNo=>"1158", teamName=>"FP Olympia D1", liga=>"4L D", vereinNo=>1015, vereinName=>"FP Olympia")
 ,array(teamNo=>"1159", teamName=>"FP Olympia H2", liga=>"4L H", vereinNo=>1015, vereinName=>"FP Olympia")
-,array(teamNo=>"1052", teamName=>"TV Frenkendorf", liga=>"", vereinNo=>1016, vereinName=>"TV Frenkendorf")
 ,array(teamNo=>"1247", teamName=>"TV Frenkendorf", liga=>"DP 2L", vereinNo=>1016, vereinName=>"TV Frenkendorf")
 ,array(teamNo=>"1016", teamName=>"VBC Gelterkinden", liga=>"2L H", vereinNo=>1017, vereinName=>"VBC Gelterkinden")
 ,array(teamNo=>"1135", teamName=>"VBC Gelterkinden D1", liga=>"3L D", vereinNo=>1017, vereinName=>"VBC Gelterkinden")
 ,array(teamNo=>"1136", teamName=>"VBC Gelterkinden D2", liga=>"4L D", vereinNo=>1017, vereinName=>"VBC Gelterkinden")
 ,array(teamNo=>"1137", teamName=>"VBC Gelterkinden D3", liga=>"4L D", vereinNo=>1017, vereinName=>"VBC Gelterkinden")
-,array(teamNo=>"1206", teamName=>"VBC Gelterkinden DU17", liga=>"", vereinNo=>1017, vereinName=>"VBC Gelterkinden")
-,array(teamNo=>"1138", teamName=>"VBC Gelterkinden DU23/1", liga=>"", vereinNo=>1017, vereinName=>"VBC Gelterkinden")
+,array(teamNo=>"1206", teamName=>"VBC Gelterkinden DU17", liga=>"U17 D", vereinNo=>1017, vereinName=>"VBC Gelterkinden")
+,array(teamNo=>"1378", teamName=>"VBC Gelterkinden DU19", liga=>"U19 D", vereinNo=>1017, vereinName=>"VBC Gelterkinden")
 ,array(teamNo=>"1134", teamName=>"VBC Gelterkinden H2", liga=>"3L H", vereinNo=>1017, vereinName=>"VBC Gelterkinden")
-,array(teamNo=>"1289", teamName=>"VBC Gelterkinden HU23", liga=>"", vereinNo=>1017, vereinName=>"VBC Gelterkinden")
-,array(teamNo=>"1311", teamName=>"Volley Glaibasel", liga=>"", vereinNo=>1018, vereinName=>"Volley Glaibasel")
+,array(teamNo=>"1142", teamName=>"Volley Glaibasel D1", liga=>"3L D", vereinNo=>1018, vereinName=>"Volley Glaibasel")
+,array(teamNo=>"1143", teamName=>"Volley Glaibasel D2", liga=>"3L D", vereinNo=>1018, vereinName=>"Volley Glaibasel")
+,array(teamNo=>"1299", teamName=>"TV Itingen", liga=>"2L D", vereinNo=>1020, vereinName=>"TV Itingen")
 ,array(teamNo=>"1243", teamName=>"VBC Kaiseraugst", liga=>"DP 2L", vereinNo=>1022, vereinName=>"VBC Kaiseraugst")
 ,array(teamNo=>"1070", teamName=>"VBC Kaiseraugst 1", liga=>"4L D", vereinNo=>1022, vereinName=>"VBC Kaiseraugst")
 ,array(teamNo=>"1351", teamName=>"VBC Laufen", liga=>"2L D", vereinNo=>1024, vereinName=>"VBC Laufen")
@@ -257,26 +257,26 @@ class KHR_Conf {
 ,array(teamNo=>"1339", teamName=>"VBC Laufen 4", liga=>"4L D", vereinNo=>1024, vereinName=>"VBC Laufen")
 ,array(teamNo=>"1364", teamName=>"VBC Laufen D5", liga=>"5L D", vereinNo=>1024, vereinName=>"VBC Laufen")
 ,array(teamNo=>"1372", teamName=>"VBC Laufen D6", liga=>"5L D", vereinNo=>1024, vereinName=>"VBC Laufen")
-,array(teamNo=>"1321", teamName=>"VBC Laufen H NLB", liga=>"", vereinNo=>1024, vereinName=>"VBC Laufen")
 ,array(teamNo=>"1365", teamName=>"VBC Laufen H2", liga=>"3L H", vereinNo=>1024, vereinName=>"VBC Laufen")
-,array(teamNo=>"1357", teamName=>"VBC Laufen U17 1", liga=>"", vereinNo=>1024, vereinName=>"VBC Laufen")
-,array(teamNo=>"1358", teamName=>"VBC Laufen U17 2", liga=>"", vereinNo=>1024, vereinName=>"VBC Laufen")
-,array(teamNo=>"1342", teamName=>"VBC Laufen U23 1", liga=>"", vereinNo=>1024, vereinName=>"VBC Laufen")
-,array(teamNo=>"1356", teamName=>"VBC Laufen U23 2", liga=>"", vereinNo=>1024, vereinName=>"VBC Laufen")
+,array(teamNo=>"1387", teamName=>"VBC Laufen HU23", liga=>"U23 H", vereinNo=>1024, vereinName=>"VBC Laufen")
+,array(teamNo=>"1384", teamName=>"VBC Laufen U17", liga=>"U17 D", vereinNo=>1024, vereinName=>"VBC Laufen")
+,array(teamNo=>"1385", teamName=>"VBC Laufen U19", liga=>"U19 D", vereinNo=>1024, vereinName=>"VBC Laufen")
+,array(teamNo=>"1342", teamName=>"VBC Laufen U23 1", liga=>"U23 D SK2", vereinNo=>1024, vereinName=>"VBC Laufen")
 ,array(teamNo=>"1020", teamName=>"SV Lausen", liga=>"4L D", vereinNo=>1025, vereinName=>"SV Lausen")
 ,array(teamNo=>"1053", teamName=>"SV Lausen", liga=>"5L D", vereinNo=>1025, vereinName=>"SV Lausen")
-,array(teamNo=>"1173", teamName=>"SC Gym Leonhard", liga=>"", vereinNo=>1026, vereinName=>"SC Gym Leonhard")
-,array(teamNo=>"1176", teamName=>"SC Gym Leonhard", liga=>"", vereinNo=>1026, vereinName=>"SC Gym Leonhard")
-,array(teamNo=>"1353", teamName=>"SC Gym Leonhard U23", liga=>"", vereinNo=>1026, vereinName=>"SC Gym Leonhard")
+,array(teamNo=>"1173", teamName=>"SC Gym Leonhard", liga=>"U17 D", vereinNo=>1026, vereinName=>"SC Gym Leonhard")
+,array(teamNo=>"1176", teamName=>"SC Gym Leonhard", liga=>"U15 H", vereinNo=>1026, vereinName=>"SC Gym Leonhard")
+,array(teamNo=>"1380", teamName=>"SC Gym Leonhard HU17", liga=>"U17 H", vereinNo=>1026, vereinName=>"SC Gym Leonhard")
+,array(teamNo=>"1382", teamName=>"SC Gym Leonhard HU23 (open)", liga=>"U23 H", vereinNo=>1026, vereinName=>"SC Gym Leonhard")
+,array(teamNo=>"1381", teamName=>"SC Gym Leonhard U19", liga=>"U19 D", vereinNo=>1026, vereinName=>"SC Gym Leonhard")
 ,array(teamNo=>"1076", teamName=>"VBC Liesberg", liga=>"5L D", vereinNo=>1052, vereinName=>"VBC Liesberg")
-,array(teamNo=>"1196", teamName=>"VBC Gym Liestal", liga=>"", vereinNo=>1027, vereinName=>"VBC Gym Liestal")
-,array(teamNo=>"1195", teamName=>"VBC Gym Liestal 1", liga=>"", vereinNo=>1027, vereinName=>"VBC Gym Liestal")
-,array(teamNo=>"1355", teamName=>"VBC Gym Liestal 2", liga=>"", vereinNo=>1027, vereinName=>"VBC Gym Liestal")
+,array(teamNo=>"1196", teamName=>"VBC Gym Liestal", liga=>"U17 D", vereinNo=>1027, vereinName=>"VBC Gym Liestal")
+,array(teamNo=>"1195", teamName=>"VBC Gym Liestal 1", liga=>"U19 D", vereinNo=>1027, vereinName=>"VBC Gym Liestal")
 ,array(teamNo=>"1087", teamName=>"VBC Gym Liestal D1", liga=>"3L D", vereinNo=>1027, vereinName=>"VBC Gym Liestal")
 ,array(teamNo=>"1234", teamName=>"VBC Gym Liestal D2", liga=>"4L D", vereinNo=>1027, vereinName=>"VBC Gym Liestal")
-,array(teamNo=>"1038", teamName=>"VBC Münchenstein", liga=>"", vereinNo=>1029, vereinName=>"VBC Münchenstein")
-,array(teamNo=>"1217", teamName=>"VBC Münchenstein", liga=>"", vereinNo=>1029, vereinName=>"VBC Münchenstein")
-,array(teamNo=>"1250", teamName=>"VBC Münchenstein", liga=>"", vereinNo=>1029, vereinName=>"VBC Münchenstein")
+,array(teamNo=>"1038", teamName=>"VBC Münchenstein", liga=>"U23 D SK2", vereinNo=>1029, vereinName=>"VBC Münchenstein")
+,array(teamNo=>"1217", teamName=>"VBC Münchenstein", liga=>"U17 D", vereinNo=>1029, vereinName=>"VBC Münchenstein")
+,array(teamNo=>"1250", teamName=>"VBC Münchenstein", liga=>"U19 D", vereinNo=>1029, vereinName=>"VBC Münchenstein")
 ,array(teamNo=>"1034", teamName=>"VBC Münchenstein 1", liga=>"2L D", vereinNo=>1029, vereinName=>"VBC Münchenstein")
 ,array(teamNo=>"1035", teamName=>"VBC Münchenstein 2", liga=>"4L D", vereinNo=>1029, vereinName=>"VBC Münchenstein")
 ,array(teamNo=>"1036", teamName=>"VBC Münchenstein 3", liga=>"4L D", vereinNo=>1029, vereinName=>"VBC Münchenstein")
@@ -286,34 +286,30 @@ class KHR_Conf {
 ,array(teamNo=>"1160", teamName=>"TV Muttenz 2", liga=>"4L D", vereinNo=>1030, vereinName=>"TV Muttenz")
 ,array(teamNo=>"1167", teamName=>"TV Muttenz 3", liga=>"4L D", vereinNo=>1030, vereinName=>"TV Muttenz")
 ,array(teamNo=>"1161", teamName=>"TV Muttenz 4", liga=>"5L D", vereinNo=>1030, vereinName=>"TV Muttenz")
-,array(teamNo=>"1168", teamName=>"TV Muttenz U15", liga=>"", vereinNo=>1030, vereinName=>"TV Muttenz")
-,array(teamNo=>"1166", teamName=>"TV Muttenz U17", liga=>"", vereinNo=>1030, vereinName=>"TV Muttenz")
-,array(teamNo=>"1165", teamName=>"TV Muttenz U19", liga=>"", vereinNo=>1030, vereinName=>"TV Muttenz")
-,array(teamNo=>"1131", teamName=>"TV Neue Welt H1", liga=>"", vereinNo=>1032, vereinName=>"TV Neue Welt")
+,array(teamNo=>"1166", teamName=>"TV Muttenz U17", liga=>"U17 D", vereinNo=>1030, vereinName=>"TV Muttenz")
+,array(teamNo=>"1165", teamName=>"TV Muttenz U19", liga=>"U19 D", vereinNo=>1030, vereinName=>"TV Muttenz")
 ,array(teamNo=>"1055", teamName=>"SC Novartis D1", liga=>"4L D", vereinNo=>1023, vereinName=>"SC Novartis")
 ,array(teamNo=>"1054", teamName=>"TV Neue Welt", liga=>"4L H", vereinNo=>1023, vereinName=>"SC Novartis")
 ,array(teamNo=>"1072", teamName=>"DR Nunningen", liga=>"4L D", vereinNo=>1033, vereinName=>"DR Nunningen")
 ,array(teamNo=>"1345", teamName=>"NS Pratteln", liga=>"DP 1L", vereinNo=>1034, vereinName=>"TV Pratteln NS")
 ,array(teamNo=>"1121", teamName=>"TV Pratteln NS 1", liga=>"3L D", vereinNo=>1034, vereinName=>"TV Pratteln NS")
 ,array(teamNo=>"1122", teamName=>"TV Pratteln NS 2", liga=>"5L D", vereinNo=>1034, vereinName=>"TV Pratteln NS")
-,array(teamNo=>"1123", teamName=>"TV Pratteln NS U23", liga=>"", vereinNo=>1034, vereinName=>"TV Pratteln NS")
+,array(teamNo=>"1123", teamName=>"TV Pratteln NS U23", liga=>"U23 D SK2", vereinNo=>1034, vereinName=>"TV Pratteln NS")
 ,array(teamNo=>"1014", teamName=>"KTV Riehen", liga=>"2L H", vereinNo=>1036, vereinName=>"KTV Riehen")
-,array(teamNo=>"1215", teamName=>"KTV Riehen 1", liga=>"", vereinNo=>1036, vereinName=>"KTV Riehen")
-,array(teamNo=>"1237", teamName=>"KTV Riehen 2", liga=>"", vereinNo=>1036, vereinName=>"KTV Riehen")
+,array(teamNo=>"1376", teamName=>"KTV Riehen", liga=>"U23 D SK2", vereinNo=>1036, vereinName=>"KTV Riehen")
+,array(teamNo=>"1215", teamName=>"KTV Riehen 1", liga=>"U15 D", vereinNo=>1036, vereinName=>"KTV Riehen")
+,array(teamNo=>"1237", teamName=>"KTV Riehen 2", liga=>"U17 D", vereinNo=>1036, vereinName=>"KTV Riehen")
+,array(teamNo=>"1237", teamName=>"KTV Riehen 2", liga=>"Quali CH-MS", vereinNo=>1036, vereinName=>"KTV Riehen")
 ,array(teamNo=>"1004", teamName=>"KTV Riehen 2 (2L-D)", liga=>"2L D", vereinNo=>1036, vereinName=>"KTV Riehen")
 ,array(teamNo=>"1112", teamName=>"KTV Riehen 3", liga=>"3L D", vereinNo=>1036, vereinName=>"KTV Riehen")
 ,array(teamNo=>"1113", teamName=>"KTV Riehen 4", liga=>"4L D", vereinNo=>1036, vereinName=>"KTV Riehen")
 ,array(teamNo=>"1362", teamName=>"KTV Riehen 5", liga=>"5L D", vereinNo=>1036, vereinName=>"KTV Riehen")
-,array(teamNo=>"1315", teamName=>"KTV Riehen A", liga=>"", vereinNo=>1036, vereinName=>"KTV Riehen")
-,array(teamNo=>"1316", teamName=>"KTV Riehen B", liga=>"", vereinNo=>1036, vereinName=>"KTV Riehen")
+,array(teamNo=>"1315", teamName=>"KTV Riehen A", liga=>"U19 D", vereinNo=>1036, vereinName=>"KTV Riehen")
 ,array(teamNo=>"1366", teamName=>"KTV Riehen Damen 6", liga=>"5L D", vereinNo=>1036, vereinName=>"KTV Riehen")
-,array(teamNo=>"1117", teamName=>"KTV Riehen U17A", liga=>"", vereinNo=>1036, vereinName=>"KTV Riehen")
 ,array(teamNo=>"1083", teamName=>"Volley Sissach", liga=>"MP 3L", vereinNo=>1039, vereinName=>"VRTV Sissach")
 ,array(teamNo=>"1110", teamName=>"VRTV Sissach", liga=>"5L D", vereinNo=>1039, vereinName=>"VRTV Sissach")
-,array(teamNo=>"1314", teamName=>"VRTV Sissach", liga=>"", vereinNo=>1039, vereinName=>"VRTV Sissach")
+,array(teamNo=>"1314", teamName=>"VRTV Sissach", liga=>"U23 D SK2", vereinNo=>1039, vereinName=>"VRTV Sissach")
 ,array(teamNo=>"1093", teamName=>"Cappuccinos", liga=>"MP 1L", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
-,array(teamNo=>"1202", teamName=>"Sm' Aesch Pfeffingen 1", liga=>"", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
-,array(teamNo=>"1197", teamName=>"Sm' Aesch Pfeffingen 2", liga=>"", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
 ,array(teamNo=>"1008", teamName=>"Sm' Aesch Pfeffingen 3", liga=>"2L D", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
 ,array(teamNo=>"1089", teamName=>"Sm' Aesch Pfeffingen 4", liga=>"2L D", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
 ,array(teamNo=>"1090", teamName=>"Sm' Aesch Pfeffingen 5", liga=>"3L D", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
@@ -321,11 +317,14 @@ class KHR_Conf {
 ,array(teamNo=>"1304", teamName=>"Sm' Aesch Pfeffingen 7", liga=>"4L D", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
 ,array(teamNo=>"1305", teamName=>"Sm' Aesch Pfeffingen 8", liga=>"4L D", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
 ,array(teamNo=>"1363", teamName=>"Sm' Aesch Pfeffingen 9", liga=>"5L D", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
-,array(teamNo=>"1100", teamName=>"Sm' Aesch Pfeffingen U17-1", liga=>"", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
-,array(teamNo=>"1219", teamName=>"Sm' Aesch Pfeffingen U17-2", liga=>"", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
-,array(teamNo=>"1327", teamName=>"Sm' Aesch Pfeffingen U19", liga=>"", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
-,array(teamNo=>"1360", teamName=>"Sm' Aesch Pfeffingen U23", liga=>"U23 IL D", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
-,array(teamNo=>"1104", teamName=>"Sm\' Aesch Pfeffingen U15-1", liga=>"", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
+,array(teamNo=>"1100", teamName=>"Sm' Aesch Pfeffingen U17-1", liga=>"U17 D", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
+,array(teamNo=>"1100", teamName=>"Sm' Aesch Pfeffingen U17-1", liga=>"Quali CH-MS", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
+,array(teamNo=>"1219", teamName=>"Sm' Aesch Pfeffingen U17-2", liga=>"U17 D", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
+,array(teamNo=>"1327", teamName=>"Sm' Aesch Pfeffingen U19", liga=>"U19 D", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
+,array(teamNo=>"1327", teamName=>"Sm' Aesch Pfeffingen U19", liga=>"Quali CH-MS", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
+,array(teamNo=>"1360", teamName=>"Sm' Aesch Pfeffingen U23", liga=>"U23 D SK2", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
+,array(teamNo=>"1104", teamName=>"Sm\' Aesch Pfeffingen U15-1", liga=>"U15 D", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
+,array(teamNo=>"1104", teamName=>"Sm\' Aesch Pfeffingen U15-1", liga=>"Quali CH-MS", vereinNo=>1040, vereinName=>"Sm' Aesch Pfeffingen")
 ,array(teamNo=>"1302", teamName=>"TV St. Johann 2", liga=>"4L D", vereinNo=>1043, vereinName=>"TV St.Johann")
 ,array(teamNo=>"1301", teamName=>"TV St. Johann 3", liga=>"4L D", vereinNo=>1043, vereinName=>"TV St.Johann")
 ,array(teamNo=>"1024", teamName=>"TV St.Johann 1", liga=>"4L D", vereinNo=>1043, vereinName=>"TV St.Johann")
@@ -333,16 +332,17 @@ class KHR_Conf {
 ,array(teamNo=>"1045", teamName=>"VBC Tecknau", liga=>"4L H", vereinNo=>1044, vereinName=>"VBC Tecknau")
 ,array(teamNo=>"1046", teamName=>"VBC Tecknau", liga=>"4L D", vereinNo=>1044, vereinName=>"VBC Tecknau")
 ,array(teamNo=>"1170", teamName=>"VBC Tenniken", liga=>"3L D", vereinNo=>1045, vereinName=>"VBC Tenniken")
-,array(teamNo=>"1324", teamName=>"VB Therwil D U15", liga=>"", vereinNo=>1046, vereinName=>"VB Therwil")
-,array(teamNo=>"1208", teamName=>"VB Therwil D U17 A", liga=>"", vereinNo=>1046, vereinName=>"VB Therwil")
-,array(teamNo=>"1354", teamName=>"VB Therwil D U17 B", liga=>"", vereinNo=>1046, vereinName=>"VB Therwil")
-,array(teamNo=>"1235", teamName=>"VB Therwil D U23", liga=>"", vereinNo=>1046, vereinName=>"VB Therwil")
+,array(teamNo=>"1324", teamName=>"VB Therwil D U15", liga=>"U15 D", vereinNo=>1046, vereinName=>"VB Therwil")
+,array(teamNo=>"1208", teamName=>"VB Therwil D U17 A", liga=>"U17 D", vereinNo=>1046, vereinName=>"VB Therwil")
+,array(teamNo=>"1354", teamName=>"VB Therwil D U17 B", liga=>"U17 D", vereinNo=>1046, vereinName=>"VB Therwil")
+,array(teamNo=>"1374", teamName=>"VB Therwil D U19", liga=>"U19 D", vereinNo=>1046, vereinName=>"VB Therwil")
 ,array(teamNo=>"1002", teamName=>"VB Therwil D3", liga=>"2L D", vereinNo=>1046, vereinName=>"VB Therwil")
 ,array(teamNo=>"1183", teamName=>"VB Therwil D4", liga=>"3L D", vereinNo=>1046, vereinName=>"VB Therwil")
 ,array(teamNo=>"1307", teamName=>"VB Therwil D5", liga=>"4L D", vereinNo=>1046, vereinName=>"VB Therwil")
 ,array(teamNo=>"1180", teamName=>"VB Therwil H1", liga=>"2L H", vereinNo=>1046, vereinName=>"VB Therwil")
 ,array(teamNo=>"1361", teamName=>"VB Therwil H2", liga=>"3L H", vereinNo=>1046, vereinName=>"VB Therwil")
 ,array(teamNo=>"1270", teamName=>"VB Therwil H3", liga=>"3L H", vereinNo=>1046, vereinName=>"VB Therwil")
+,array(teamNo=>"1386", teamName=>"VB Therwil KU23", liga=>"U23 H", vereinNo=>1046, vereinName=>"VB Therwil")
 ,array(teamNo=>"1086", teamName=>"SVKT Therwil", liga=>"DP 2L", vereinNo=>1047, vereinName=>"SVKT Therwil")
 ,array(teamNo=>"1007", teamName=>"SC Uni Basel 1", liga=>"2L D", vereinNo=>1048, vereinName=>"SC Uni Basel")
 ,array(teamNo=>"1051", teamName=>"SC Uni Basel 3", liga=>"4L D", vereinNo=>1048, vereinName=>"SC Uni Basel")
@@ -603,28 +603,25 @@ class KHR_Conf {
 		
 		
 
-		$this->teamListe['U23' ]  = array(teamNo    => '', //1114'
+		$this->teamListe['U23' ]  = array(teamNo    => '1376', //1114'
 																			teamName  => 'U23',
 																			verband   => self::REGIONAL,
-																			gruppen   => array(array(gruppeNo => '1028', gruppeName => 'Meisterschaft')));
+																			gruppen   => array(array(gruppeNo => '1110', gruppeName => 'Meisterschaft')));
 		
-		$this->teamListe['U19A' ] = array(teamNo    => '1315',
-																			teamName  => 'U19A',
+		$this->teamListe['U19' ] = array(teamNo    => '1315',
+																			teamName  => 'U19',
 																			verband   => self::REGIONAL,
-																			gruppen   => array(array(gruppeNo => '1047', gruppeName => 'Finalrunde A')
-																					              ,array(gruppeNo => '1032', gruppeName => 'Vorrunde')));
+																			gruppen   => array(array(gruppeNo => '1032', gruppeName => 'Vorrunde Gruppe B')));
 		
-		$this->teamListe['U19B' ] = array(teamNo    => '1316',
-																			teamName  => 'U19B',
-																			verband   => self::REGIONAL,
-																			gruppen   => array(array(gruppeNo => '1050', gruppeName => 'Finalrunde B')
-																					              ,array(gruppeNo => '1031', gruppeName => 'Vorrunde')));
+		//$this->teamListe['U19B' ] = array(teamNo    => '',
+		//																teamName  => 'U19B',
+		//																	verband   => self::REGIONAL,
+		//																	gruppen   => array(array(gruppeNo => '1032', gruppeName => 'Finalrunde B')));
 		
-		$this->teamListe['U17A' ] = array(teamNo    => '1117',
-																			teamName  => 'U17A',
+		$this->teamListe['U17' ] = array(teamNo    => '1237',
+																			teamName  => 'U17',
 																			verband   => self::REGIONAL,
-																			gruppen   => array(array(gruppeNo => '1051', gruppeName => 'Finalrunde B')
-																					              ,array(gruppeNo => '1034', gruppeName => 'Vorrunde')));
+																			gruppen   => array(array(gruppeNo => '1034', gruppeName => 'Vorrunde Gruppe A')));
 		
 		//$this->teamListe['U17B' ] = array(teamNo    => '1237',
 	  //  																teamName  => 'U17B',
@@ -636,6 +633,11 @@ class KHR_Conf {
 															 			  teamName  => 'U15',
 																 		  verband   => self::REGIONAL,
 																	 	  gruppen   => array(array(gruppeNo => '1057', gruppeName => 'Meisterschaft')));
+
+		$this->teamListe['U13' ]  = array(teamNo    => '',
+																			teamName  => 'U13',
+																			verband   => self::REGIONAL,
+																			gruppen   => array(array(gruppeNo => '0', gruppeName => 'Meisterschaft')));
 		
 	}
 	

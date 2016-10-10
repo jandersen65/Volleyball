@@ -27,13 +27,7 @@ class Spiel {
 	private $auswTeamSaetzPunkte5;
 
 
-	private $wochenTage = array("1" => "Mo",
-															"2" => "Di",
-															"3" => "Mi",
-															"4" => "Do",
-															"5" => "Fr",
-															"6" => "Sa",
-															"7" => "So");
+	private $wochenTage;
 
 	function __construct(
 			$verband,
@@ -62,6 +56,7 @@ class Spiel {
 			$auswTeamSaetzPunkte5) {
 		$this->verband                   = $verband;
 		$this->spielNo                   = $spielNo;
+		$this->datum                     = "";
 		$this->gruppenNo                 = $gruppenNo;
 		$this->gruppenName               = $gruppenName;
 		$this->halle                     = $halle;
@@ -83,9 +78,15 @@ class Spiel {
 		$this->heimTeamSaetzPunkte5      = $heimTeamSaetzPunkte5;
 		$this->auswTeamSaetzPunkte5      = $auswTeamSaetzPunkte5;
 		
+		$this->wochenTage = array("1" => "Mo",
+															"2" => "Di",
+															"3" => "Mi",
+															"4" => "Do",
+															"5" => "Fr",
+															"6" => "Sa",
+															"7" => "So");
 		
-		
-		if (isset($datum)) {
+		if (isset($datum) && (strlen($datum) > 0)) {
 			$this->datum = date_create_from_format('Y-m-d H:i:s', $datum . " " . $zeit);
 			if (!$this->datum) {
 				$this->datum = date_create_from_format('Y-m-d H:i', $datum . " " . $zeit);
@@ -114,7 +115,11 @@ class Spiel {
 
 	public function getSpielDatum() {
 		
-		if (is_null($this->datum)) {
+		if (is_string($this->datum)) {
+			return "";
+		}
+
+		if (!isset($this->datum)) {
 			return "";
 		}
 		
