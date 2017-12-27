@@ -94,12 +94,12 @@
   		$teamListe = new TeamListe();
   		if (intval($vereinNo) > -1) {
 	  	  foreach ($conf->getRegionaleTeams() as $tmp) {
-	  	  	if (   strcmp($tmp["vereinNo"], $vereinNo) == 0  
-	  	  	    && strcmp($tmp["liga"],     "")        != 0) {
+	  	  	if (   strcmp($tmp['vereinno'], $vereinNo) == 0  
+	  	  	    && strcmp($tmp['liga'],     "")        != 0) {
 	  	  		$verband  = $conf::REGIONAL;
-	  	  		$verein       = new Verein($tmp["vereinName"], null, $tmp["vereinNo"]);
-	  	  		$teamNo       = $tmp["teamNo"];
-	  	  		$teamName     = $tmp["teamName"];
+	  	  		$verein       = new Verein($tmp["vereinname"], null, $tmp["vereinno"]);
+	  	  		$teamNo       = $tmp["teamno"];
+	  	  		$teamName     = $tmp["teamname"];
 	  	  		$primaereLiga = $tmp["liga"];
 	  	  		$team         = new Team($verband, $verein, $teamNo, $teamName, $primaereLiga);
 	  	      $teamListe->addTeam($team);

@@ -323,8 +323,8 @@ class SwissVolleyWS {
 		$conf = new KHR_Conf();
 		$teamRec = $conf->getNationalTeamRec($teamNo);
 		
-		$verein = new Verein($teamRec["vereinName"], $teamRec["vereinNo"], null);
-		$team = new Team($conf::NATIONAL, $verein, $teamNo, $teamRec["teamName"], $teamRec["liga"]);
+		$verein = new Verein($teamRec["vereinname"], $teamRec["vereinno"], null);
+		$team = new Team($conf::NATIONAL, $verein, $teamNo, $teamRec["teamname"], $teamRec["liga"]);
 		
 		$this->connect(SV_WSDL);
 		$spiele =  $this->client->getGamesTeam($teamNo);

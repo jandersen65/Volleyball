@@ -36,9 +36,9 @@ function verein2php($teams) {
 			return;
 		}
 		
-		echo  "array('teamNo'   => '" . $team->ID_team   . "'," . "<br>"
+		echo  "array('teamno'   => '" . $team->ID_team   . "'," . "<br>"
 		   .  "      'verband'  => " . "self::NATIONAL"  . ","  . "<br>"
-		   .  "      'teamName' => '" . (strcmp($team->Gender, "f") == 0 ? "Damen " : "Herren ") . $team->LeagueCaption . "'," . "<br>"
+		   .  "      'teamname' => '" . (strcmp($team->Gender, "f") == 0 ? "Damen " : "Herren ") . $team->LeagueCaption . "'," . "<br>"
 		   .  "      'gruppen'  => array(";
 		
 		$sep = "";

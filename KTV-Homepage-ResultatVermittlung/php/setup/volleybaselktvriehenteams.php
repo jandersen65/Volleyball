@@ -24,17 +24,17 @@ function verein2php($verein) {
 		echo "//" . (String)$team->ligaList->liga[0]->ligaName;
 		echo "<br/>";
 		
-		echo   "array('teamNo'   => '" . $team->teamNo    . "'," . "<br>"
+		echo   "array('teamno'   => '" . $team->teamNo    . "'," . "<br>"
 				.  "      'verband'  => " . "self::REGIONAL"  . ","  . "<br>"
-		 		.  "      'teamName' => '" . $team->teamName  . "'," . "<br>"
+		 		.  "      'teamname' => '" . $team->teamName  . "'," . "<br>"
 			  .  "      'gruppen'  => array(";
 
 		$sep = "";
 		foreach ($team->ligaList->liga as $liga) {
 			foreach($liga->gruppeList->gruppe as $gruppe) {
 			  echo $sep;
-			  echo "array('gruppeNo'    => '" . $gruppe->gruppeNo   . "',"
-				  	.       "'gruppeName' => '" . $gruppe->gruppeName . "')";
+			  echo "array('gruppeno'    => '" . $gruppe->gruppeNo   . "',"
+				  	.       "'gruppename' => '" . $gruppe->gruppeName . "')";
 			}
 		  $sep = '<br/>                         ,';
 		} // foreach gruppe

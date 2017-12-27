@@ -46,8 +46,8 @@
     	$controller->getAktuelleSpiele();
     	break;
     case "2001": // aktuelle Spiele, Verein
-      $regionalVereinNo = $request->getParameter("regionalVereinNo");
-      $nationalVereinNo = $request->getParameter("nationalVereinNo");
+      $regionalVereinNo = $request->getParameter("regionalvereinno");
+      $nationalVereinNo = $request->getParameter("nationalvereinno");
     	$controller->getAktuelleSpieleVerein($regionalVereinNo, $nationalVereinNo);
     	break;
     case "2010": // alle Spiele
@@ -88,8 +88,8 @@
     	$controller->getRegioVereine();
     	break;
     case "7002": // verein
-      $regionalVereinNo = $request->getParameter("regionalVereinNo");
-      $nationalVereinNo = $request->getParameter("nationalVereinNo");
+      $regionalVereinNo = $request->getParameter("regionalvereinno");
+      $nationalVereinNo = $request->getParameter("nationalvereinno");
     	$controller->getTeamVerein($regionalVereinNo, $nationalVereinNo);
     	break;
     case "7010": // nationale mannschaften;
@@ -97,7 +97,7 @@
     	break;
     case "7020": // team generel
       $verband = $request->getParameter("verband");
-      $teamNo  = $request->getParameter("teamNo");
+      $teamNo  = $request->getParameter("teamno");
     	$controller->getGenTeam($verband, $teamNo);
     	break;
     case "7025": // KTV teams

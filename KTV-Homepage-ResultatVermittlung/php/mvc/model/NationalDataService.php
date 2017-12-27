@@ -82,15 +82,16 @@
   		$teamListe = new TeamListe();
   		if (intval($vereinNo) > -1) {
 	  	  foreach ($conf->getNationaleTeams() as $tmp) {
-	  	  	if (   strcmp($tmp["vereinNo"], $vereinNo) == 0  
+	  	  	if (   strcmp($tmp["vereinno"], $vereinNo) == 0  
 	  	  	    && strcmp($tmp["liga"],     "")        != 0) {
 	  	  		$verband      = $conf::NATIONAL;
-	  	  		$verein       = new Verein($tmp["vereinName"], $tmp["vereinNo"], null);
-	  	  		$teamNo       = $tmp["teamNo"];
-	  	  		$teamName     = $tmp["teamName"];
+	  	  		$verein       = new Verein($tmp["vereinname"], $tmp["vereinno"], null);
+	  	  		$teamNo       = $tmp["teamno"];
+	  	  		$teamName     = $tmp["teamname"];
 	  	  		$primaereLiga = $tmp["liga"];
 	  	  		$team         = new Team($verband, $verein, $teamNo, $teamName, $primaereLiga);
 	  	      $teamListe->addTeam($team);
+	  	  	//var_dump($tmp);
 	  	  	}
 	  	  }
   		}

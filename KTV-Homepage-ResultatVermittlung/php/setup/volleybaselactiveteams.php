@@ -37,11 +37,11 @@ foreach (simplexml_load_string($result) as $verein) {
 		foreach ($team->ligaList->liga as $liga) {
 			$ligaUID = $liga->ligaUID;
 		  if (!in_array($ligaUID, array("CEV", "1L D", "1L H", "NLB D", "NLB H", "NLA D", "NLA H", "CUP D", "CUP H"))) {
-		  	echo ',array(teamNo=>"'   . $teamNo         . '", '
-			          . 'teamName=>"'   . $teamName       . '", '
-			          . 'liga=>"'       . $ligaUID         . '", '
-			          . 'vereinNo=>'    . $vereinNo       . ', '
-			          . 'vereinName=>"' . $vereinName     . '"' . ')'  . '<br>';
+		  	echo ',array(\'teamno\'=>"'   . $teamNo         . '", '
+			          . '\'teamname\'=>"'   . $teamName       . '", '
+			          . '\'liga\'=>"'       . $ligaUID         . '", '
+			          . '\'vereinno\'=>'    . $vereinNo       . ', '
+			          . '\'vereinname\'=>"' . $vereinName     . '"' . ')'  . '<br>';
 		  }
 		}
 	}

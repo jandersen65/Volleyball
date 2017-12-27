@@ -30,8 +30,8 @@ class JandersenViewer  {
 		foreach ($vereinListe->getVereine() as $verein) {
 			$params   = " data-id=id_khr_einhalt"
 					      . " data-action=7002" 
-					      . " data-regionalVereinNo=" . (is_null($verein->getRegionalVereinNo()) ? -1 : $verein->getRegionalVereinNo())
-	              . " data-nationalVereinNo=" . (is_null($verein->getNationalVereinNo()) ? -1 : $verein->getNationalVereinNo());
+					      . " data-regionalvereinno=" . (is_null($verein->getRegionalVereinNo()) ? -1 : $verein->getRegionalVereinNo())
+	              . " data-nationalvereinno=" . (is_null($verein->getNationalVereinNo()) ? -1 : $verein->getNationalVereinNo());
 			$vereinName = utf8_encode($verein->getVereinName());
 			$html .= "<a class='khr_link' href='#'" .  $params . ">" . $vereinName . "</a></br>";
 		}
@@ -80,12 +80,14 @@ class JandersenViewer  {
 
 
 	private function printVereineInMenu($action, $vereinListe) {
+		
+		$html   = "";
 		$lnk    = "";
 		foreach ($vereinListe->getVereine() as $verein) {
 			$params = " data-id=id_khr_einhalt"
 					. " data-action=" . $action
-					. " data-regionalVereinNo=" . (is_null($verein->getRegionalVereinNo()) ? -1 : $verein->getRegionalVereinNo())
-					. " data-nationalVereinNo=" . (is_null($verein->getNationalVereinNo()) ? -1 : $verein->getNationalVereinNo());
+					. " data-regionalvereinno=" . (is_null($verein->getRegionalVereinNo()) ? -1 : $verein->getRegionalVereinNo())
+					. " data-nationalvereinno=" . (is_null($verein->getNationalVereinNo()) ? -1 : $verein->getNationalVereinNo());
 			$vereinName = utf8_encode($verein->getVereinName());
 			$html .=    "<li><a class='khr_link uk-dropdown-close' href='#'" .  $params . ">" . $vereinName . "</a></li>";
 		}
@@ -149,8 +151,8 @@ class JandersenViewer  {
 				                                                            : $team->getRegionalVereinNo();
 		   	  $params = " data-id=id_gen_team"
 					        . " data-action=2001"
-					        . " data-regionalVereinNo='" . $regionalVereinNo . "'"
-					        . " data-nationalVereinNo='" . $nationalVereinNo . "'";
+					        . " data-regionalvereinno='" . $regionalVereinNo . "'"
+					        . " data-nationalvereinno='" . $nationalVereinNo . "'";
 			    $html .= "<a class='khr_link uk-button' href='#'" .  $params . ">Aktuelle Spiele</a></br>" ;
 		    }
 				
@@ -220,8 +222,8 @@ class JandersenViewer  {
 		
 		foreach($gruppen as $grp) {
 			
-			$grpNo   = $grp["gruppeNo"];
-			$grpName = $grp["gruppeName"];
+			$grpNo   = $grp["gruppeno"];
+			$grpName = $grp["gruppename"];
 
 			$params = ' data-id=id_khr_teampage_data'
 					    . ' data-action=5000'

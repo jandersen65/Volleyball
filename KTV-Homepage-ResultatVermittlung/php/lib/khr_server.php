@@ -17,10 +17,10 @@ else {
 }
 */
 
-define("isForJQuery",          false);
-//define("GALERIEN_WEB_HOME",    "http://ktvriehen.ch/ktv_galerien");
+define("isForJQuery",          true);
+define("GALERIEN_WEB_HOME",    "http://ktvriehen.ch/ktv_galerien");
 define("GALERIEN_PHP_HOME",    "../../ktv_galerien");
-define("GALERIEN_WEB_HOME",    "http://localhost/ktv_galerien");
+//define("GALERIEN_WEB_HOME",    "http://localhost/ktv_galerien");
 
 
 

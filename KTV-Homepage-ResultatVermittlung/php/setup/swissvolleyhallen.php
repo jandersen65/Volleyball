@@ -21,9 +21,9 @@ function hallen2php($hallen) {
 		$halleAdresse =  trim($strasse) . ((trim($strasse) == FALSE) ? "" : ", ") . trim($stadt);
 
 		echo '&nbsp;&nbsp;'
-		  .  ',array(halleNo=>"'       . str_pad($halle->ID_hall . '", ', 8)
-		  .          'halleName=>"'    . str_pad(utf8_decode(strip($halle->Caption)). '", ', 40)
-		  .          'halleAdresse=>"' . utf8_decode($halleAdresse)   . '") '
+		  .  ',array(\'halleno\'=>"'       . str_pad($halle->ID_hall . '", ', 8)
+		  .          '\'hallename\'=>"'    . str_pad(utf8_decode(strip($halle->Caption)). '", ', 40)
+		  .          '\'halleadresse\'=>"' . utf8_decode($halleAdresse)   . '") '
 			.  '<br>';
 	}
 	echo ');';

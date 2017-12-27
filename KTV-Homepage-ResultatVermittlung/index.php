@@ -64,12 +64,13 @@
               </li>
            </ul>
          </div>
-			
+			          
          <div class="uk-container">
 			     <table>
             <tr>
               <td>
 			          <div id="id_khr_einhalt" ></div>
+			          
 			        </td>
 			      </tr>
 	        </table>

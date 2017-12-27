@@ -175,8 +175,8 @@
   		$conf = new KHR_Conf();
   		$teamRec = $conf->getRegionaleTeamRec($teamNo);
   	
-  		$verein = new Verein($teamRec["vereinName"], null, $teamRec["vereinNo"]);
-  		$team = new Team($conf::REGIONAL, $verein, $teamNo, $teamRec["teamName"], $teamRec["liga"]);
+  		$verein = new Verein($teamRec["vereinname"], null, $teamRec["vereinno"]);
+  		$team = new Team($conf::REGIONAL, $verein, $teamNo, $teamRec["teamname"], $teamRec["liga"]);
   	
   		$args = array("need"      => "resultatList",
 	                  'output'    => 'xml',

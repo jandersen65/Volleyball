@@ -24,14 +24,14 @@ class ResultatController {
 	private function getTeamNo($team) {
 		$tmp = $this->teamListe[$team] ;
 		if ($tmp) {
-			return $tmp["teamNo"];
+			return $tmp["teamno"];
 		}
 	}
 	
 	private function getTeamName($team) {
 		$tmp = $this->teamListe[$team] ;
 		if ($tmp) {
-			return $tmp["teamName"];
+			return $tmp["teamname"];
 		}
 	}
 
@@ -45,14 +45,14 @@ class ResultatController {
 	private function getGruppeNo($team) {
 		$tmp = $this->teamListe[$team] ;
 		if ($tmp) {
-			return $tmp["gruppen"][0]["gruppeNo"];
+			return $tmp["gruppen"][0]["gruppeno"];
 		}
 	}
 	
 	private function getGruppeName($team) {
 		$tmp = $this->teamListe[$team] ;
 		if ($tmp) {
-			return $tmp["gruppen"][0]["gruppeName"];
+			return $tmp["gruppen"][0]["gruppename"];
 		}
 	}
 

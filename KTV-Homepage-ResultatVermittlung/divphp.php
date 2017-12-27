@@ -42,6 +42,15 @@ $monat = date("n");
 $year  = date("Y") + (("12" > 4) ? 1 : - 1);
 echo $monat . ", " . $year;
 
+
+echo "a";
+require_once("php/lib/khr_conf.php");
+echo "b";
+$conf = new KHR_Conf();
+echo "x";
+var_dump($conf->getRegionaleTeams());
+echo "y";
+
 ?>
 
 </body>

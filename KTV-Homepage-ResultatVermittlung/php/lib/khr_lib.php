@@ -7,7 +7,7 @@
   		if (($td1 != NULL) && ($td2 != NULL)) {
   	    $tmp1 = 0 + $td1->format('U'); // 0 - Zahlkonvertierung
   	    $tmp2 = 0 + $td2->format('U');
-        return $tmp1 < $tmp2 ? -1 : ($tmp1 == tmp2 ? 0 : 1);
+        return $tmp1 < $tmp2 ? -1 : ($tmp1 == $tmp2 ? 0 : 1);
   		}
   	}
   	return 0;

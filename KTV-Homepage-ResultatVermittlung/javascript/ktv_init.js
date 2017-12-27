@@ -46,7 +46,7 @@
    $(document).ready(function()  {
       $('#idMenu').on('show.uk.switcher',
 		                  function(event, area) {
-	                       document.getElementById("id_khr_einhalt").innerHTML="";
+	                       //document.getElementById("id_khr_einhalt").innerHTML="";
                       });
   });
 

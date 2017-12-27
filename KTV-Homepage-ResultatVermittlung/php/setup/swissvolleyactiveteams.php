@@ -37,11 +37,11 @@ function  getActiveTeams() {
 		$liga       = $tmp->LeagueCaption . (strcmp($tmp->Gender, "f") == 0 ? "-D" : "-H");
 		$vereinNo   = $tmp->club_ID;
 		$vereinName = htmlentities($tmp->ClubCaption);
-		echo ',array(teamNo=>"'   . $teamNo     . '", '
-			 . 'vereinNo=>'         . $vereinNo   . ', '
-			 . 'liga=>"'            . $liga       . '", '
-			 . 'teamName=>"'        . $teamName   . '", '
-			 . 'vereinName=>"'      . $vereinName . '"' . ')'  . '<br>';
+		echo ',array(\'teamno\'=>"'   . $teamNo     . '", '
+			 . '\'vereinno\'=>'         . $vereinNo   . ', '
+			 . '\'liga\'=>"'            . $liga       . '", '
+			 . '\'teamname\'=>"'        . $teamName   . '", '
+			 . '\'vereinname\'=>"'      . $vereinName . '"' . ')'  . '<br>';
 	}
 	echo ');';
 	return $ret;

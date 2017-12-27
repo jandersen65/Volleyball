@@ -23,7 +23,7 @@ class Gruppe {
 		$this->spielListe     = new SpielListe();
 		$this->team           = $team;
 		$this->ligaNo         = $ligaNo;
-		$this->ligaType       = $ligaType; //TODO
+		$this->ligaType       = ""; //$ligaType; //TODO
 		$this->ligaName       = $ligaName;
 		$this->ligaNameKurz   = $ligaName;
 		$this->gruppeNo       = $gruppeNo;
