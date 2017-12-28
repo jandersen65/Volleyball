@@ -23,7 +23,7 @@ class Gruppe {
 		$this->spielListe     = new SpielListe();
 		$this->team           = $team;
 		$this->ligaNo         = $ligaNo;
-		$this->ligaType       = ""; //$ligaType; //TODO
+		$this->ligaType       = ""; //$ligaType;
 		$this->ligaName       = $ligaName;
 		$this->ligaNameKurz   = $ligaName;
 		$this->gruppeNo       = $gruppeNo;
@@ -39,7 +39,7 @@ class Gruppe {
 		echo ".  LigaName    $this->ligaName <br/>";
 		echo ".  isCup      " . ($this->isCup() ? 1 : 0) . "<br/>";
 	}
-	
+
 	public function setRangliste(RangListe $rangListe) {
 		$this->rangListe = $rangListe;
 	}
@@ -47,35 +47,35 @@ class Gruppe {
 	public function getRangliste() {
 		return $this->rangListe;
 	}
-	
+
   public function getTeam() {
   	return $this->team;
   }
-  
+
   public function isCup() {
   	return strcasecmp($this->ligaName, "Volley Cup") == 0;
   }
-  
+
   public function getLigaNo() {
   	return $this->ligaNo;
   }
-  
+
   public function getLigaType() {
   	return $this->ligaType;
   }
-  
+
   public function getLigaName() {
   	return $this->ligaName;
   }
-  
+
   public function getLigaNameKurz() {
   	return $this->ligaNameKurz;
   }
-  
+
   public function getGruppeNo() {
   	return $this->gruppeNo;
   }
-  
+
   public function getGruppeName() {
   	return $this->gruppeName;
   }
@@ -83,7 +83,7 @@ class Gruppe {
   public function getGruppeNameKurz() {
   	return $this->gruppeNameKurz;
   }
-  
+
   public function getSpiele() {
   	return $this->spielListe;
   }
@@ -95,7 +95,7 @@ class Gruppe {
   public function addSpiel(Spiel $spiel) {
   	return $this->spielListe->addSpiel($spiel);
   }
-	
+
 }
 
 ?>
