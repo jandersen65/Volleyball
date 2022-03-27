@@ -9,9 +9,11 @@ function getGalerieList(pId) {
 }
 
 
+
+
 function viewEmbedded(elemId) {
-  galeriePath  = document.getElementById(elemId).innerHTML;
-  galerieElem  = document.getElementById("id_galerie");
+  galeriePath   = document.getElementById(elemId).innerHTML;
+  galerieElem   = document.getElementById("id_galerie");
   galerieElem.innerHTML = "<iframe src='" + galeriePath + "' width='800px' height='500px'></iframe>";
 }
 
